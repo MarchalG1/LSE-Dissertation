@@ -1,1 +1,7 @@
 *.acsm
+*.aux
+*.out
+*.synctex.gz
+*.toc
+*.log
+*Tex_files_and_pdfs
