@@ -1,82 +1,50 @@
-\documentclass[12pt,a4paper]{article} % a4paper, 12pt
+\documentclass[12pt,a4paper]{article}
 
-\usepackage{amsfonts}
-\usepackage{breakcites}
-\usepackage[pagewise]{lineno}
-\usepackage{setspace}
-\usepackage{geometry}
-\usepackage[authoryear]{natbib}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{mathtools}
-\usepackage{mathrsfs}
-\usepackage{enumerate}
-\usepackage{epsfig}
-\usepackage{afterpage}
-\usepackage[toc]{appendix}
-\usepackage{hyperref}
-\usepackage{breakurl}
-\usepackage{rotating}
-\usepackage{graphicx}
-\usepackage{lscape}
-\usepackage{pdflscape}
-\usepackage{textcomp}
-\usepackage[flushleft]{threeparttable}
-\usepackage{dcolumn}
-\usepackage[footnotesize,tight]{subfigure}
-\usepackage[final]{pdfpages}
-\usepackage{booktabs}
-\usepackage[font=normalsize,labelfont=sc,justification=centering,
-            tableposition=top,aboveskip=2pt,
-            labelsep=colon]{caption}
-\usepackage{eurosym}
-\usepackage{comment}
-\usepackage{bbm}
+% Encoding
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{accents}
-\usepackage[export]{adjustbox}
-\usepackage{soul}
 
-% Arial font - Moodle requires Arial or Times New Roman
+% Page layout
+\usepackage{geometry}
+\geometry{a4paper,left=2.54cm,right=2.54cm,top=2.54cm,bottom=2.54cm}
+
+% Font - Arial (LSE requirement)
 \usepackage{helvet}
 \renewcommand{\familydefault}{\sfdefault}
 
-\subfigbottomskip = 0.55cm
-\newcolumntype{d}[1]{D{.}{.}{3.5}}
+% Spacing
+\usepackage{setspace}
 
-\DeclareMathOperator*{\argmax}{arg\,max}
-\DeclareMathOperator*{\argmin}{arg\,min}
-\DeclareMathOperator{\plim}{plim}
+% Bibliography
+\usepackage[
+backend=biber,
+style=apa,
+url = false,
+doi = false,
+isbn=false,
+]{biblatex}
+\addbibresource{bibliography.bib} %Imports bibliography file
 
-\newcommand{\ubar}[1]{\underaccent{\bar}{#1}}
-
-\hypersetup{colorlinks=true,citecolor=black,linkcolor=black,filecolor=black,urlcolor=black}
-
-\renewcommand{\thesubfigure}{\Alph{subfigure}.}
-\renewcommand\floatpagefraction{.9}
-\renewcommand\topfraction{.9}
-\renewcommand\bottomfraction{.9}
-\renewcommand\textfraction{.1}
-\setcounter{totalnumber}{50}
-\setcounter{topnumber}{50}
-\setcounter{bottomnumber}{50}
-\setcounter{MaxMatrixCols}{20}
-
-% Normal margins = 2.54cm - Moodle requirement
-\geometry{a4paper,left=2.54cm,right=2.54cm,top=2.54cm,bottom=2.54cm}
-
-\UseRawInputEncoding
-
-% Candidate number on every page - Moodle requirement
+% Headers - candidate number (LSE requirement)
 \usepackage{fancyhdr}
+\setlength{\headheight}{14.5pt}
 \pagestyle{fancy}
 \fancyhf{}
 \rhead{\small Candidate Number: XXXXX}
 \rfoot{\thepage}
 \renewcommand{\headrulewidth}{0pt}
 
+%Fix hbox warning
+\sloppy
+
+% Misc
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{appendix}
+
 \begin{document}
+
+\begin{doublespace}
 % Cover page - Moodle requirement
 \thispagestyle{empty}
 \pagenumbering{gobble}                          % suppress page numbers
@@ -105,11 +73,13 @@ My abstract goes here
 
 \newpage
 
+
+
 \tableofcontents
 \newpage
 
 % Double spacing - Moodle requirement
-\begin{doublespace}
+
 \pagenumbering{arabic}                          % page numbers start here
 \setcounter{page}{1}
 %\input{sections/introduction}
@@ -122,16 +92,22 @@ My abstract goes here
 \newpage
 \section{Introduction}
 
-Let's try something. Part 2 \citep{downey_13_2022}.
+\section{Background and Theory}
 
+\subsection{Regulatory Capture}
 
+Conceptualizations of regulatory capture are often rooted in the seminal work by \cite{stigler_theory_1971}. Stigler rejects the ``idealistic"
 
-% Bibliography - excluded from word count
-\newpage
-\bibliography{bibliography}
-\bibliographystyle{agsm}
+Second paragraph is here \cite{downey_our_2025}.
+
 
 
 \end{doublespace}
+
+% Bibliography - excluded from word count
+\newpage
+
+\printbibliography
+
 
 \end{document}
