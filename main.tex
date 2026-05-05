@@ -31,7 +31,7 @@ isbn=false,
 \setlength{\headheight}{14.5pt}
 \pagestyle{fancy}
 \fancyhf{}
-\rhead{\small Candidate Number: XXXXX}
+%\rhead{\small Candidate Number: XXXXX}
 \rfoot{\thepage}
 \renewcommand{\headrulewidth}{0pt} %Links in-text citations to references
 
@@ -110,35 +110,44 @@ My abstract goes here
 
 \section{Background and Theory}
 
+I build a basic 
+
 \subsection{Regulatory Capture}
 
 Conceptualizations of regulatory capture are often rooted in the seminal work by \cite{stigler_theory_1971}. 
 
-\section{Central Bank Independence Literature}
+\subsection{Central Bank Independence Literature}
 
 The first evidence for structural regulatory capture should be in the epistemic environment that CBI is built upon. In particular, there is a significant economics literature defending CBI. Many policymakers in central banking that this is a well-established consensus, and few mainstream policymakers openly criticize this consensus. If central bank independence reflects the interest of finance, then, principally, those interests should be reflected in assumptions that govern empirical and theoretical analysis of central banking. 
 
 There is little cross-discipline analysis on central bank independence. While the economics literature generally promotes findings regarding the merits of CBI, political science literature is more critical, arguing about the distributional consequences of monetary policy and the implications of CBI on democratic institutions. In this paper, I apply the findings of political science literature to economics literature.
 
-Let's use the term normative loading.
-
-\subsection{The Theoretical Case for CBI}
+\subsubsection{Economics Literature on Central Bank Independence}
 
 The theoretical foundation for central bank independence lies in a few seminal works.  \textcite{kydland_rules_1977} were the first to apply the time-inconsistency and credible commitment public policy problem to the inflation-unemployment tradeoff detailed in economics literature. In brief, in a model economy with rational agents and a government seeking to maximize some ``social objective function," governments will naturally have a temptation to implement a surprise expansionary (inflationary) policy that temporarily pushes down unemployment \parencite[473]{kydland_rules_1977}. Rational agents predict this action, so they set their inflation expectations higher, meaning that the surprise action the government would implement would trigger even higher inflation. This principle makes credible commitment by governments challenging, so the end result is heightened inflation expectations from agents. Inflation becomes anchored at a level that is higher than what the social objective function deems optimal.
 
 %This is analagous to agents building homes in a flood-plane, despite government assurances that they would not receive flood protection. Once the homes are built, the government will have the incentive to reverse course and protect the homes, so agents predict this policy-reversal and build their homes anyway \parencite[p. 477]{kydland_rules_1977}. 
 
-\textcite{barro_rules_1983} apply this logic directly to monetary authorities. First, note that they (along with much other theoretical literature on monetary policy) assume that monetary policy is neutral in the long-run. This principally means that while the amount of currency in circulation may increase with expansionary monetary policy, the relative price between goods should, in theory, not change after a change in monetary policy \parencite[49-50]{downey_economic_2025}. Given this, \textcite{barro_rules_1983} suggests that monetary policy can only reap benefits if there is a short-run surprise, before prices can readjust. However, rational agents incorporate this in their inflation expectations, pushing up inflation without reaping any rewards if monetary policy is conducted under discretion. While a central bank may seek to preserve its reputation, thereby creating some credibility regarding its policies, this is only a partial substitute. \textcite{barro_rules_1983} argue that the optimal setup is a central bank that is entirely constrained by rules, thereby establishing credibility and anchoring inflation expectations of agents. \textcite[1177]{rogoff_optimal_1985} provide several possible solutions, the most practical of which is appointing a ``conservative central banker" who is ``known to place a greater weight on inflation stabilization" than the social objective function would suggest. They will be less tempted to implement inflationary policy, and rational agents set inflation expectations lower as a consequence. While they acknowledge that this may not be theoretical optimal, the conservative central banker argument underpins much of the empirical literature defending CBI.
+\textcite{barro_rules_1983} apply this logic directly to monetary authorities. First, note that they (along with much other theoretical literature on monetary policy) assume that monetary policy is neutral in the long-run. This principally means that while the amount of currency in circulation may increase with expansionary monetary policy, the relative price between goods should, in theory, not change after a change in monetary policy \parencite[49-50]{downey_economic_2025}. Given this, \textcite{barro_rules_1983} suggests that monetary policy can only reap benefits if there is a short-run surprise, before prices can readjust. However, rational agents incorporate this in their inflation expectations, pushing up inflation without reaping any rewards if monetary policy is conducted under discretion. While a central bank may seek to preserve its reputation, thereby creating some credibility regarding its policies, this is only a partial substitute. \textcite{barro_rules_1983} argue that the optimal setup is a central bank that is entirely constrained by rules, thereby establishing credibility and anchoring inflation expectations of agents. \textcite[1177]{rogoff_optimal_1985} provide several possible solutions, inclucing removing appointing a ``conservative central banker" who is ``known to place a greater weight on inflation stabilization" than the social objective function would suggest. They will be less tempted to implement inflationary policy, and rational agents set inflation expectations lower as a consequence. While they acknowledge that this may not be theoretical optimal, the conservative central banker argument underpins much of the empirical literature defending CBI.
 
-\subsection{Empirical Evidence on CBI}
 
-Empirical analysis on the merits of central bank independence originates with \textcite{grilli_political_1991}, \textcite{cukierman_measuring_1992}, and \textcite{alesina_central_1993}. Generally, these papers take observable characteristics of the institutional setup of central banks, compile these observable metrics into an index, and then produce a statistical model measuring how different levels of CBI influence economic variables like output and inflation. This general approach has been repeated and adjusted in the literature, most recently, by \textcite{romelli_political_2022} and \textcite{adrian_new_2024}. Arguing for the merits of a given index or strategy is beyond the scope of this paper, but they all share a basic theoretical understanding.
+Empirical analysis on the merits of central bank independence originates with \textcite{grilli_political_1991}, \textcite{cukierman_measuring_1992}, and \textcite{alesina_central_1993}. Generally, these papers take observable characteristics of the institutional setup of central banks, compile these observable metrics into an index, and then produce a statistical model measuring how different levels of CBI influence economic variables like output and inflation. This general approach has been repeated and adjusted in the literature, most recently, by \textcite{romelli_political_2022} and \textcite{adrian_new_2024}. Arguing for the merits of a given index or strategy is beyond the scope of this paper, but they all share a basic theoretical basis in the arguments initially presented by \textcite{kydland_rules_1977}, \textcite{barro_rules_1983}, and \textcite{rogoff_optimal_1985}. I will present additional analysis on these empirics in section XXXX. However, these empirical papers generally find one result, namely that the politicization of monetary policy rases inflation without boosting economic growth \parencite[4]{cochrane_central_2025}. 
 
-``The result of these dozens of papers across decades of research is clear, consistent, and sensible. The very overt politicization of the Fed or of any central bank raises average inflation rates, with no net gain in economic growth once the needed disinflation that follows is taken into account, as well as the lasting impact of increasing inflation persistence" \parencite[4]{cochrane_central_2025}
+Crucially, the literature distinguishes between operational independence and goal independence, and this is important for the Fed. While political institutions should determine the goals of monetary policy (US Congress for the goals of the Federal Reserve), the Fed must remain operationally independent in achieving those goals \parencite[3]{cochrane_central_2025, debelle_how_1994}. Today, the Federal Reserve his a tripartite mandate of  promoting the goals of ``maximum employment, stable prices, and moderate long-term interest rates," set about the a 1977 amendment to the Federal Reserve Act passed by Congress. The Federal Reserve coloquially refers to this as the ``dual mandate" of stable prices and maximum employment, dropping the moderate long-term interest rate component because of its ``redundancy" \parencite[15]{downey_economic_2025}. 
 
-The time-inconsistency problem essentially finds that rational agents form expectations accurately based on predictions of how government agencies will react. 
+
+
+%``In other words, no one is advocating that the Fed should be able to do whatever it wants to do, and no one serious ever did. Elected officials, Congress in the US system, must set the Fed’s policy goals" 
+
+
+
+\section{Analysis}
 
 \subsection{Normative Loading in the Theoretical Literature}
+
+\textcite[357]{cukierman_measuring_1992}: ``"In Rogoff's (1985) terminology, the objectives variable measures the strength of the 'conservative bias' of the bank's charter." 
+
+%Let's use the term normative loading.
 
 Much of this literature is predicated on the idea that monetary policy is neutral in the long-run \parencite{downey_economic_2025}.
 
@@ -149,8 +158,6 @@ Normative loading on the preferences of the optimal objective are prevelant in b
 They think ``of the monetary authority’s objective as reflecting the preferences of the “representative’ private agent. Ultimately, we express this objective as a function of actual and expected rates of inflation" \parencite[102]{barro_rules_1983}.
 
 
-
-An important underlying point is that this literature assumes the neu
 
 \end{doublespace}
 
