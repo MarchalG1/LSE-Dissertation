@@ -1,0 +1,269 @@
+---
+title: "Dissertation Outline"
+subtitle: "Assumptions Matter: Central Bank Independence, Epistemology, and Structural Regulatory Capture"
+author: "Gregory Marchal"
+date: "May 2026"
+format:
+  pdf:
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    mainfont: "Georgia"
+    fontsize: 12pt
+    geometry: margin=1in
+---
+
+
+## Research Question
+
+Why do private financial interests consistently defend the Federal Reserve's independence?
+
+## Thesis
+
+###Rewrite in you own wordss
+Financial interests are embedded in the academic foundations that justify central bank independence at the Federal Reserve. These arguments were mobilized by policymakers and actors to build an institutional arrangement reflecting those assumptions. This created a result that mirrors traditional conceptions of regulatory capture without requiring direct coordination between the institution and private interests.
+
+---
+
+
+# 1. Introduction (~750 words)
+
+- **JPMorgan/Powell paradox as hook** --- JPMorgan defends Powell against a government it otherwise influences. This is anomalous: why would a captured regulator need defending? Standard capture models can't explain it.
+
+- **The asymmetry** --- Financial institutions challenge the Fed when it imposes constraints on them (stress tests, capital requirements) but defend it against democratic oversight. That asymmetry is the first piece of evidence.
+
+- **RQ + thesis preview** --- The answer isn't just self-interest or career incentives. The epistemological framework used to justify CBI was compromised before individual actors made a single biased choice.
+
+- **Epistemic capture as central contribution** --- The economics literature that says CBI is optimal is itself a product of a captured epistemic environment. That's the argument.
+
+- **"Ingrained" framing** --- Financial interests weren't subsequently captured by the Fed. They were built in from the start --- the Fed was never fully public (Downey).
+
+---
+
+
+# 2. Background and Theory (~1,900 words)
+
+## 2.1 The Economics Literature on CBI (~700 words)
+
+### 2.1.1 Central banking and CBI defined
+
+- **Goal vs. instrument independence (Debelle and Fischer 1994)** --- Congress sets the goals; the Fed has operational independence to achieve those goals. Powell himself says this. This distinction matters because the index literature penalises the Fed's dual mandate even though Congress set it.
+
+- **Powell framing** --- The Fed serves at the leisure of Congress. If Congress decided to remove the price stability component of the dual mandate, that's a legitimate exercise of goal-setting authority --- yet it would lower the Fed's CBI score.
+
+- **Fed's dual mandate (Section 2A, Federal Reserve Act)** --- Maximum employment and price stability are co-equal objectives in the legal text. The economics literature treats this as a deficiency rather than a democratic choice.
+
+### 2.1.2 Theoretical foundations
+
+- **Kydland and Prescott (1977)** --- Time-inconsistency problem applied to inflation-unemployment tradeoff. Governments will always be tempted to implement surprise inflationary policy; rational agents predict this and set expectations higher. The foundational assumption every subsequent paper inherits.
+
+- **Barro and Gordon (1983)** --- Applies the logic directly to monetary authorities. Monetary policy is neutral in the long run, so it can only reap benefits through short-run surprise. Under discretion, this produces an inflationary bias. Rules are optimal. Reputation is only a partial substitute.
+
+- **Rogoff (1985)** --- The conservative central banker solution. Explicitly third-best --- behind removing the underlying labour market distortion (first-best, which is itself a normative claim about labour markets) and a constitutional rule (second-best). Acknowledges employment variance rises as a cost. Rules out infinite inflation aversion as suboptimal. The empirical literature inherits the conclusion but drops all the caveats.
+
+### 2.1.3 Empirical development
+
+- **GMT (1991); CWN (1992); Alesina and Summers (1993)** --- Observable institutional characteristics compiled into indices, statistical models measuring how CBI influences output and inflation. The free lunch claim: lower inflation, no output cost. Alesina and Summers themselves caveat it as "not conclusive" --- that caveat disappears from the policy consensus.
+
+- **Romelli (2022); Adrian et al. (2024)** --- Same general approach, updated and extended. Romelli's objectives dimension --- which encodes price stability conservatism --- has more than doubled across his sample period. He presents this approvingly.
+
+- **Shared features across all five** --- De jure measurement, inherited time-inconsistency prior, price stability as the benchmark, free lunch claim that drops Rogoff's acknowledged trade-off. They don't argue against employment as an objective --- they assume it away by construction.
+
+### 2.1.4 The technocratic legitimation claim
+
+- **Fischer (1995)** --- Instrument independence justified by technical complexity. Monetary policy is too complex for democratic deliberation; it requires expert insulation.
+
+- **Does double work** --- Justifies CBI on meritocratic grounds AND pre-emptively delegitimises democratic oversight as incompetent. These are two separate moves that look like one.
+
+- **Flag** --- Bernanke in Section 4.3 confirms the informational asymmetry this claim relies on. Posen/PIIE 2025 is essentially the technocratic claim restated as the rival hypothesis.
+
+---
+
+## 2.2 The Political Science Literature on CBI (~400 words)
+
+- **Posen (1995)** --- Declarations are not enough. CBI requires an active political coalition to sustain it. The financial sector has historically provided that coalition.
+
+- **Adolph (2018)** --- Shadow principals: career incentives shape central banker preferences before and after office. Greater legal independence makes central bankers more powerful agents --- and more valuable to shadow principals. Critiques the "myth of neutrality."
+
+- **Jacobs and King (2018)** --- The Fed acquired vast new powers under cover of technocratic complexity. QE recapitalised the financial sector --- a political multiplier effect that increased financial sector power precisely at the post-2008 reform moment.
+
+- **Zingales (2013)** --- Economists face the same capture mechanisms as regulators: career incentives, funding dependencies, professional socialisation. Pro-market findings circulate more widely and define what's acceptable to conclude.
+
+- **GAO reports (2017, 2019)** --- The government's own auditors acknowledged capture risk at the Fed and FDIC. This isn't just an academic argument.
+
+- **Federal Advisory Council finding** --- Only the four largest banks on the FAC demonstrably influence the Federal Funds rate. The closest thing to direct empirical evidence of monetary policy capture.
+
+- **Two non-interacting epistemic communities** --- Economics and political science study CBI without citing each other. The economics community is institutionally embedded; the political science critique has no equivalent footprint. This non-interaction is itself evidence.
+
+- **Flag** --- Developed in Section 4.1.
+
+---
+
+## 2.3 Regulatory Capture (~500 words)
+
+- **Dal Bó (2006): broad definition** --- Capture includes monetary policy explicitly. Pre-empts the objection that this only applies to utility regulation.
+
+- **Three-tier hierarchy** --- Congress → Fed → banks. The regulator can be captured by the firm against the interests of the political principal. That's the legislative blockage argument.
+
+- **Stigler-Peltzman black box** --- Stigler: regulation is acquired by the industry and designed primarily for its benefit. Peltzman extends this into a model. Neither explains the internal mechanism --- Dal Bó opens the box.
+
+- **Asymmetric information** --- Regulatory discretion originates in informational asymmetry. The regulator can be captured precisely because the principal lacks the expertise to monitor.
+
+- **Kwak (2013): cultural capture** --- Regulators influenced through group identification and socialisation, not bribes. No explicit coordination required. This is what structural capture looks like in practice.
+
+- **Instrumental vs. structural distinction** --- Instrumental requires observable coordination: lobbying, revolving doors, bribes. Structural operates through institutional design that aligns interests before influence is even exercised.
+
+- **Epistemic capture as extension** --- The captured community is the one that got institutionalised. The non-interaction between the two literatures isn't accidental --- it's structural.
+
+---
+
+
+# 3. Methodology (~950 words)
+
+## 3.1 Research design (~300 words)
+
+- **Theory-testing single case study: the Federal Reserve** --- The Fed is the appropriate case because of its outsized importance in the development of CBI globally and the economics literature more broadly. The dual mandate is directly referenced in the index critique, making it the most tractable case for demonstrating the circularity at the heart of the argument.
+
+- **Process tracing (Beach and Pedersen 2019)** --- "A research method for tracing causal mechanisms using detailed, within-case empirical analysis of how a causal mechanism operated in real-world cases" (p. 1); "we shift the analytical focus from causes and outcomes to the hypothesized causal mechanisms in between" (p. 1). Inferences are made using "the correspondence between the hypothetical empirical fingerprints that might have been left by the operation of a mechanism and the actual empirical observations we find in a case" (p. 3).
+
+    - **Bennett and Checkel (2015)** --- Complementary guidelines for applying process tracing in political science, particularly on using within-case evidence to evaluate competing causal explanations.
+
+- **A sequential causal chain, not triangulation** --- The three analytical sections are not independent streams. They are causally linked legs of one mechanism: the epistemological prior (4.1) produces the assumptions; those assumptions travel through personnel and institutional discourse (4.2); that transmission forecloses legislative revision (4.3). Each step is downstream of the prior one.
+
+## 3.2 Causal chain and evidentiary tests (~400 words)
+
+- **Step 1 --- hoop test: epistemological assumptions encode financial preferences** --- Necessary condition and origin of the chain. If the literature's assumptions don't systematically favour creditor interests, the whole mechanism fails at its source.
+
+- **Step 2 --- hoop test: assumptions transmitted through institutional vessels** --- Necessary condition and middle leg. The assumptions from Step 1 must travel from academic literature into institutional practice through specific, traceable channels.
+
+- **Step 3 --- smoking gun: legislative revision foreclosed using the same assumptions** --- The chain closes here. Legislative inaction defended by the same assumptions that originated in Step 1 is the circularity that confirms the mechanism is operating end-to-end.
+
+- **Hoop test (Van Evera 1997)** --- Necessary but not sufficient: absent fingerprint kills the hypothesis; present fingerprint keeps it alive but doesn't confirm it.
+
+- **Smoking gun test (Van Evera 1997)** --- Sufficient but not necessary: if found, strongly confirms the hypothesis; its absence doesn't eliminate it. Decisive because the evidence would be very hard to explain under any rival hypothesis.
+
+- **Rival hypothesis limitation** --- *[TO REVISIT]* Technocratic legitimacy (Posen) can explain Step 3 in isolation but can't explain why the measurement apparatus in Step 1 encodes financial preferences, or why the personnel patterns in Step 2 reproduce them.
+
+## 3.3 Rival hypothesis (~250 words)
+
+- **Posen (PIIE 2025): technocratic legitimacy** --- CBI works; legislators defer because it's rational to defer given the Fed's track record.
+
+- **Insufficient** --- Explains the outcome but not the assumptions, not the personnel patterns, not the redirected reform energy.
+
+- **The rival hypothesis is itself a product of the epistemic environment under scrutiny** --- Posen's argument reproduces the assumptions of the pro-CBI literature. Its inability to see capture is exactly what the capture thesis predicts.
+
+---
+
+
+# 4. Analysis (~5,750 words)
+
+## 4.1 The Epistemological Prior: Compromised Starting Conditions (~1,800 words)
+
+*This is the load-bearing section. The argument is not about people protecting their money or career incentives --- it is that there is an entire literature ingraining special interests at the very beginning of what presents itself as non-partisan analysis. Even if policymakers and bureaucrats were to act and follow the literature strictly, they would reach the same conclusions about the merits of CBI. The question this section asks is how these two literatures --- economics and political science --- came to such radically different conclusions, and how the conclusions of one came to be encoded in institutional design while the other did not.*
+
+- **Price stability as unexamined social optimum** --- Kydland-Prescott assume low inflation is consistent with the public's preferences. They never defend that claim. Every subsequent paper inherits it.
+
+- **Rogoff's third-best treated as first-best** --- The empirical literature takes the conservative banker solution and treats it as the unambiguous social optimum. Rogoff's own ranking, his employment variance caveat, his finite inflation aversion condition --- all dropped.
+
+- **First-best encodes neoclassical labour market assumptions** --- Rogoff's preferred solution assumes market employment is being suppressed by distortions like unemployment insurance. That's a contestable normative claim about labour markets, not a neutral starting point.
+
+- **The free lunch claim** --- Alesina and Summers say lower inflation, no output cost. Their own caveat ("not conclusive") disappears from the consensus. The trade-off Rogoff acknowledged is gone.
+
+- **Technocratic claim encoded in index literature** --- The indices are presented as technical instruments. They're not --- they encode normative preferences about what monetary policy should do. Expertise is used to insulate the measurement apparatus from critique.
+
+- **De jure measurement conflates mandate content with operational autonomy** --- The indices measure what the mandate contains, not how independently it's pursued. These are categorically different things.
+
+- **Powell example: mandate revision toward employment lowers Romelli score** --- If Congress exercised its constitutional authority to revise the mandate, the Fed's independence score would fall. That proves the circularity. What is being measured is not independence --- it is the content of the mandate.
+
+- **US/Turkey anomaly** --- The US scores below Turkey on de jure indices. Turkey is Posen's own example of a country that lost independence and got inflation. The qualitative and quantitative evidence point in opposite directions inside the same literature.
+
+- **Two non-interacting communities demonstrated textually** --- Romelli doesn't cite Dal Bó. PIIE contributors don't engage the capture literature. The non-interaction can be documented, not just asserted.
+
+- **The incommensurability of starting questions** --- The economics literature asks how to optimise monetary policy. The political science literature asks whose interests monetary policy serves. These aren't competing answers to the same question --- they're different questions entirely.
+
+- **Schneider, Strahan and Yang (2023)** --- Capture framework applied to Fed stress testing in a peer-reviewed journal. The argument is established in the literature even before applying it to monetary policy.
+
+- **Conclusion** --- Even a saint following the economics literature strictly would reach pro-CBI conclusions. The problem is in the starting conditions, not the individuals.
+
+---
+
+## 4.2 Vessels of Transmission (~1,600 words)
+
+*The prior doesn't stay in journals. It travels into institutions through specific channels --- and those channels are what this section traces.*
+
+### 4.2.1 How the Prior Travels: Governance, Communication, and Expertise (~800 words)
+
+- **Downey: Fed never fully public** --- Reserve bank boards are two-thirds banker or banker-appointees. The primary dealer system concentrates monetary transmission in a small set of major financial institutions. Financial interests are designed into the institution before capture is even needed.
+
+- **Bernanke (*The Courage to Act*, 2015)** --- Congress didn't understand what QE was while it was happening. The Fed's own chair confirms Dal Bó's asymmetric information mechanism. The technocratic claim isn't just a justification --- it actively disables oversight.
+
+- **PIIE 2025 as institutional exhibit** --- The monetary policy mandate is treated as beyond democratic contestation. Capture risk is acknowledged, but only for supervisory functions. The prior is being reproduced in real time.
+
+- **Adolph: greater legal independence amplifies shadow principal influence** --- More independent central bank = more powerful agent = more valuable to financial sector principals.
+
+- **Rockefeller/Wriston historical asymmetry** --- Financial sector critique of the Fed has always targeted specific constraints, not independence itself. After Volcker, the critique flips to attacking looseness (Druckenmiller). The asymmetry runs historically deep --- it's structural, not incidental.
+
+### 4.2.2 Revolving Door (~800 words)
+
+- **The goal of this section** --- Show that the prior reproduces itself through personnel. The career pipeline from finance to central bank to finance ensures the epistemic community that produces the literature also staffs the institution.
+
+- **ABA revolving door: Olson; Duke** --- The same individuals move between the ABA and the Fed Board of Governors. The epistemic community reproduces itself through appointments.
+
+- **Bowman: community bank → Vice Chair for Supervision → SVB reframing** --- Adolph's shadow principals mechanism made concrete. Career trajectory predicts policy outcomes. SVB framed as a management failure, not a structural regulatory failure. Supervision staff cut 30%. Post-SVB reforms reversed.
+
+- **Wirsching (2018)** --- Finance-sector backgrounds empirically predict deregulatory outcomes. Pattern predicted by Adolph, explained by Kwak.
+
+- **Federal Advisory Council** --- The four largest banks have a formal governance channel that demonstrably influences the Federal Funds rate. This isn't revolving door dynamics --- it's structural institutional design.
+
+- **Kwak: cultural capture through socialisation** --- Regulators identify with regulated firms through repeated interaction. No coordination required. The prior reproduces through professional culture.
+
+---
+
+## 4.3 Legislative Blockage (~2,350 words)
+
+*The defences of legislative inaction use the same assumptions exposed in 4.1. That's the circularity: the literature that encodes financial preferences is the same literature mobilised to argue revision is unnecessary.*
+
+- **Volcker 1979: the original encoding event** --- Full regime shift toward price stability with no legal change. The dual mandate was operationally overwritten without democratic revision. Structural capture came before CBI entrenchment, not after.
+
+- **Lindblom (1982): market as prison** --- Any attempt to revise the mandate triggers financial market volatility. No lobbying required. The structural deterrent grows as the financial sector grows --- UK banking sector went from roughly 100% to 450% of GDP since the 1970s.
+
+- **Dodd-Frank as failed critical juncture** --- Post-2008 was the strongest reform moment in decades. Reform got channelled into adjustments --- Class A director reform, stress testing --- that foreclosed fundamental revision. QE had already recapitalised the financial sector, increasing its political power precisely when reform pressure was greatest (Jacobs and King 2018 --- "political multiplier effect").
+
+- **ABA/BPI stress test litigation** --- Challenges the Fed when it imposes constraints; defends it against democratic oversight. That asymmetry is the behavioural signature of structural alignment.
+
+- **McCubbins and Schwartz (1984): fire alarm oversight blocked** --- Congress only intervenes when sectoral interests trigger the alarm. The financial sector makes sure the alarm doesn't get pulled on mandate questions.
+
+- **Bernanke/asymmetric information** --- Congress can't revise what it doesn't understand. The technocratic claim does active legislative work --- it doesn't just justify independence, it disables the mechanism that would produce revision.
+
+- **PIIE 2025 as epistemic closure exhibit** --- The expert community advising Congress on monetary policy shares the same assumptions exposed in 4.1. The defences of independence are the prior in institutional form.
+
+- **The circularity stated explicitly** --- The literature encoding financial preferences is the same literature mobilised to defend against legislative revision. The rival hypothesis isn't an independent check --- it's produced by the same epistemic environment.
+
+- **Rival hypothesis engagement** --- Technocratic legitimacy explains the outcome. It can't explain the measurement bias, the personnel patterns, or the redirected reform energy. It needs three independent coincidences. Epistemic capture explains all three with one mechanism.
+
+---
+
+
+# 5. Conclusion (~650 words)
+
+- **Epistemic capture as unifying mechanism** --- The prior gets produced in a compromised epistemic environment → travels through personnel and institutional discourse → makes democratic revision structurally unthinkable. The cycle is self-reinforcing.
+
+- **The "ingrained" framing** --- Financial interests are not external to the Fed's legitimating framework. They were encoded in it from the beginning.
+
+- **Contribution 1** --- Extends Dal Bó/Kwak capture typology to monetary policy. Epistemic capture is the primary mechanism.
+
+- **Contribution 2** --- CBI measurement is circular. The literature can't neutrally evaluate the institution it legitimates because it was shaped by the same interests the institution serves.
+
+- **Technocratic claim as mechanism of circularity** --- Expertise justifies insulation → insulation means assumptions go unchallenged → unchallenged assumptions validate the expertise. The loop closes.
+
+- **Implication** --- The policy consensus defending CBI rests on a literature whose starting conditions were compromised. It can't be taken as independent validation.
+
+- **Caveat** --- This is not an argument for Trump's ability to remove Powell. That's a different problem --- authoritarianism and central banking --- and a separate research agenda. This argument is about democratic design and epistemic legitimacy.
+
+- **Closing** --- The question isn't whether the Fed should be independent from political interference. It's whether the epistemological justifications for that independence can be trusted, given they were shaped by the interests they claim to analyse neutrally.
+
+---
+
+*Total: ~10,000 words*
+
+*Last updated: May 2026*
