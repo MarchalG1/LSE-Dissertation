@@ -16,27 +16,27 @@ format:
 
 ## Research Question
 
-Why do private financial interests consistently defend the Federal Reserve's independence?
+Why do private financial interests defend Federal Reserve independence?
 
 ## Thesis
 
-###Rewrite in you own wordss
-Financial interests are embedded in the academic foundations that justify central bank independence at the Federal Reserve. These arguments were mobilized by policymakers and actors to build an institutional arrangement reflecting those assumptions. This created a result that mirrors traditional conceptions of regulatory capture without requiring direct coordination between the institution and private interests.
+###Rewrite in you own words
+The interests of financial institutions were encoded in the institutional structures governing the Federal Reserve. These interests can be traced from the epistemological assumptions rooted in economics literature on central bank independence, through personnel and discourse, into consistent blockage of legislative revision of the Fed's dual mandate. The end result is a system that reflects regulatory capture without requiring explicit coordination or lobbying among firms; private interests instead only have to promote inaction.
 
 ---
 
 
 # 1. Introduction (~750 words)
 
-- **JPMorgan/Powell paradox as hook** --- JPMorgan defends Powell against a government it otherwise influences. This is anomalous: why would a captured regulator need defending? Standard capture models can't explain it.
+- **JPMorgan/Powell paradox as hook** --- JPMorgan defends Powell against a government it otherwise influences.
 
-- **The asymmetry** --- Financial institutions challenge the Fed when it imposes constraints on them (stress tests, capital requirements) but defend it against democratic oversight. That asymmetry is the first piece of evidence.
+- **The asymmetry** --- Financial institutions challenge the Fed when it imposes constraints on them (stress tests, capital requirements) but defend it against democratic oversight. Regulatory capture theory would posit the opposite- that financial institutions can use their power to lobby politicians. 
 
-- **RQ + thesis preview** --- The answer isn't just self-interest or career incentives. The epistemological framework used to justify CBI was compromised before individual actors made a single biased choice.
+- **RQ + thesis preview** 
 
-- **Epistemic capture as central contribution** --- The economics literature that says CBI is optimal is itself a product of a captured epistemic environment. That's the argument.
+- **Epistemic capture as central contribution** --- The economics literature that defends the merits of CBI bases both modeling and empirical analysis with normative assumptions that mimic the interests of financial firms.
 
-- **"Ingrained" framing** --- Financial interests weren't subsequently captured by the Fed. They were built in from the start --- the Fed was never fully public (Downey).
+- **"Ingrained" framing** --- Financial interests weren't subsequently captured by the Fed. They were built in from the start.
 
 ---
 
@@ -47,19 +47,17 @@ Financial interests are embedded in the academic foundations that justify centra
 
 ### 2.1.1 Central banking and CBI defined
 
-- **Goal vs. instrument independence (Debelle and Fischer 1994)** --- Congress sets the goals; the Fed has operational independence to achieve those goals. Powell himself says this. This distinction matters because the index literature penalises the Fed's dual mandate even though Congress set it.
+- **Goal vs. instrument independence (Debelle and Fischer 1994)** --- Congress sets the goals; the Fed has operational independence to achieve those goals. Powell himself says this. This distinction matters for my future analysis on empirical work on CBI, with the price stability component being incorporated in the CBI indices. 
 
-- **Powell framing** --- The Fed serves at the leisure of Congress. If Congress decided to remove the price stability component of the dual mandate, that's a legitimate exercise of goal-setting authority --- yet it would lower the Fed's CBI score.
-
-- **Fed's dual mandate (Section 2A, Federal Reserve Act)** --- Maximum employment and price stability are co-equal objectives in the legal text. The economics literature treats this as a deficiency rather than a democratic choice.
+- **Fed's dual mandate (Section 2A, Federal Reserve Act)** -- Simple definition. Worth noting this is actually a "tripartite" mandate.
 
 ### 2.1.2 Theoretical foundations
 
-- **Kydland and Prescott (1977)** --- Time-inconsistency problem applied to inflation-unemployment tradeoff. Governments will always be tempted to implement surprise inflationary policy; rational agents predict this and set expectations higher. The foundational assumption every subsequent paper inherits.
+- **Kydland and Prescott (1977)** --- Time-inconsistency problem applied to inflation-unemployment tradeoff. The general principle for CBI.
 
-- **Barro and Gordon (1983)** --- Applies the logic directly to monetary authorities. Monetary policy is neutral in the long run, so it can only reap benefits through short-run surprise. Under discretion, this produces an inflationary bias. Rules are optimal. Reputation is only a partial substitute.
+- **Barro and Gordon (1983)** --- Applies the logic directly to monetary authorities. Monetary policy is neutral in the long run, so it can only reap benefits through short-run surprise. Under discretion, this produces an inflationary bias. Unsure if I will mention that rules are optimal, and reputation is only a partial substitute.
 
-- **Rogoff (1985)** --- The conservative central banker solution. Explicitly third-best --- behind removing the underlying labour market distortion (first-best, which is itself a normative claim about labour markets) and a constitutional rule (second-best). Acknowledges employment variance rises as a cost. Rules out infinite inflation aversion as suboptimal. The empirical literature inherits the conclusion but drops all the caveats.
+- **Rogoff (1985)** --- The conservative central banker solution. Explicitly third-best --- behind removing the underlying labour market distortion (basically getting rid of welfare in order to promote the free market) and a constitutional rule (second-best). Acknowledges employment variance rises as a cost. Rules out infinite inflation aversion as suboptimal. The empirical literature inherits the conclusion but drops all the caveats.
 
 ### 2.1.3 Empirical development
 
