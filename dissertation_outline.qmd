@@ -27,10 +27,10 @@ The interests of financial institutions were encoded in the institutional struct
 
 # 1. Introduction (~750 words)
 
-- **JPMorgan/Powell paradox as hook** --- JPMorgan defends Powell against a government it otherwise influences.
+- **HOOK: JPMorgan/Powell paradox** --- JPMorgan defends Powell against a government it otherwise influences.
 
 - **The asymmetry** --- Financial institutions challenge the Fed when it imposes constraints on them (stress tests, capital requirements) but defend it against democratic oversight. Regulatory capture theory would posit the opposite- that financial institutions can use their power to lobby politicians. 
-          The broader puzzle is principally, Congress has control over the goals of the Federal Reserve. Why don't they exercise their powers?
+    Extension: Congress has control over the goals of the Federal Reserve. Why don't they exercise their powers to reform the goals of monetary policy?
 
 - **RQ + thesis preview** 
 
@@ -62,6 +62,9 @@ The interests of financial institutions were encoded in the institutional struct
 - **Rogoff (1985)** --- The conservative central banker solution- incorporate a monetary authority/ head central banker who prefers less inflation than society does. Explicitly third-best --- behind removing the underlying labour market distortion (basically getting rid of welfare in order to promote the free market) and a constitutional rule (second-best). There can be an increase in variance of employment as a consequence- conservative central bankers would be fine with lower employment to tradeoff with inflation.
           The empirical literature inherits the conclusion but drops all the caveats.
 
+- **Posen (1995)** --- The conservative central banker's preferences are mirrored by those of the financial sector- and thus it is the financial sector's support that determines levels of CBI
+
+
 ### 2.1.3 Empirical development
 
 - **GMT (1991); CWN (1992); Alesina and Summers (1993)** --- Observable institutional characteristics compiled into indices, statistical models measuring how CBI influences output and inflation. The free lunch claim: lower inflation, no output cost. Alesina and Summers themselves caveat it as "not conclusive" --- that caveat disappears from the policy consensus (see Cochrane).
@@ -69,6 +72,10 @@ The interests of financial institutions were encoded in the institutional struct
 - **Romelli (2022); Adrian et al. (2024)** --- Same general approach, updated and extended. Romelli's objectives dimension --- which encodes price stability conservatism --- has more than doubled across his sample period. He presents this approvingly. Will spend time in the analysis section on this methodology, because that is important.
 
 - **Shared features across all five** --- De jure measurement, inherited time-inconsistency prior, price stability as the benchmark, free lunch claim that drops Rogoff's acknowledged trade-off. They don't argue against employment as an objective --- they assume it away by construction.
+
+- **Isabel Schnabel Comments on Monetary Dominance Contrasted with PoliSci Literature** --- Notes that the dual mandate means little in practice. Monetary dominance is a) reflected in the current conduct of monetary policy and b) puts the price stability mandate first
+    ---There is no analysis of the political justifications for this.
+
 
 ### 2.1.4 The technocratic legitimation claim
 
@@ -82,6 +89,8 @@ The interests of financial institutions were encoded in the institutional struct
 
 ## 2.2 The Political Science Literature on CBI (~400 words)
 
+### Establish two core facts: 1. There is a non-engaged with political science CBI literature, particularly regarding the democratic implications of monetary policy. 2. Central banks have a unique relationship with finance (and vice verse).
+
 - **Literature on CBI an non-neutrality of central banks/bankers**
     - **Adolph (2018)** --- Shadow principals: career incentives shape central banker preferences before and after office. Greater legal independence makes central bankers more powerful agents --- and more valuable to shadow principals. Critiques the "myth of neutrality."
 
@@ -93,7 +102,9 @@ The interests of financial institutions were encoded in the institutional struct
 
 - **Federal Advisory Council finding** --- Only the four largest banks on the FAC demonstrably influence the Federal Funds rate. The closest thing to direct empirical evidence of monetary policy capture.
 
-- **Mabbett and Schelkle** --- Broader discussion of the Fed's "loneliness"
+- **Mabbett and Schelkle** --- Broader discussion of the Fed's "loneliness." Describes how a central bank may limit the expansion of its own powers in a period of financial instability (2008)
+    - Central banks are concerned with "independence from financial markets"- but this is primarily a perception driven attack. They are deeply concerned with financial markets for the execution of their own powers
+    - Loneliness from fiscal authorities may reflect a game between fiscal and monetary authorities- yet monetary powers are "delegated" to banks (Downey). Leaving finance out of this picture misses something.
 
 - **Missing interactions between literatures** --- Economics and political science study CBI without citing each other. The economics community is institutionally embedded; the political science critique has no equivalent footprint.
 
@@ -114,6 +125,13 @@ The interests of financial institutions were encoded in the institutional struct
         That said, this doesn't really 
 
 - **Epistemic capture as extension** --- The captured community is the one that got institutionalised. The non-interaction between the two literatures isn't accidental --- it's structural.
+
+## 2.4 Who benefits from each side of the dual mandate
+
+- **Need to flesh this out more**
+
+Downey, King & Jacobs, Stiglitz etc... It is not obvious who gets hurt from inflation. Costs of inflation are somewhat "unknown".
+    Note that the 
 
 ---
 
@@ -161,6 +179,7 @@ This is the load-bearing section. The argument is not about people protecting th
 - **Price stability as unexamined social optimum** --- Kydland-Prescott assume low inflation is consistent with the public's preferences. They never defend that claim. Every subsequent paper inherits it.
 
 - **Rogoff's third-best treated as first-best** --- The empirical literature takes the conservative banker solution and treats it as the unambiguous social optimum. Rogoff's own ranking, his employment variance caveat, his finite inflation aversion condition --- all dropped.
+    - Rogoff's conservative central banker shows up in all sorts of references afterward
 
 - **First-best encodes neoclassical labour market assumptions** --- Rogoff's preferred solution assumes market employment is being suppressed by distortions like unemployment insurance. That's a contestable normative claim about labour markets, not a neutral starting point.
 
@@ -180,7 +199,7 @@ This is the load-bearing section. The argument is not about people protecting th
 
 - **Schneider, Strahan and Yang (2023)** --- Capture framework applied to Fed stress testing in a peer-reviewed journal. The argument is established in the literature even before applying it to monetary policy.
 
-- **Conclusion** --- Even a saint following the economics literature strictly would reach pro-CBI conclusions. The problem is in the starting conditions, not the individuals.
+- **Conclusion** --- Following the economics literature strictly would reach pro-CBI conclusions. This leaves no room for political critique
 
 ---
 
