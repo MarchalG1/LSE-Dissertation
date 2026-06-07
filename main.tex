@@ -168,11 +168,7 @@ As previously mentioned, \textcite{grilli_political_1991}, \textcite{cukierman_m
 To get around this, these papers focus on measures of ``de jure" central bank independence. They build indices based on observable shifts in laws governing monetary policy over time. The advantage of this approach is the grounding in a tangible, measurable action that can be easily and clearly translated into data. However, the role that laws play in changing the ``real" influence of a bank can be questionable. The stability of the legal institutions that enforce these laws greatly influence the practical influence of the laws over CBI, yet this is difficult to incorporate. At this point, though, within the academic literature, this is the settled on as the best empirical, data-driven methodlogy for measuring central bank independence.
 
 
-The most recent, peer-reviewed publicly available CBI indices from \textcite{romelli_trends_2024} and \textcite{garriga_revisiting_2025}.
-
-Before analyzing the construction of these indices, it's
-
-
+The most recent, peer-reviewed publicly available CBI indices from \textcite{romelli_trends_2024}, \textcite{garriga_revisiting_2025} and textcite{dincer_central_2024}. they do a transparency index but I guess it finds the same thing with Turkey and the US. Updated in 2024
 
 
 \begin{table}[htbp]
@@ -232,7 +228,62 @@ Before analyzing the construction of these indices, it's
 \end{minipage}
 \end{table}
 
+
+This is the \textcite{dincer_central_2024}. I couldn't get the breakdown data, but they include the price stability stuff. Note thatt this is built on \textcite{eijffinger_how_2006}.
+
+\begin{table}[htbp]
+\centering
+\caption{Central Bank Independence Scores: United States vs.\ Turkey, \textcite{dincer_central_2024}}
+\label{tab:us_turkey_dem}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Index} & \textbf{USA} & \textbf{Turkey} & \textbf{Gap} \\
+ & \textbf{(2021)} & \textbf{(2021)} & \textbf{(Turkey $-$ USA)} \\
+\midrule
+\multicolumn{4}{l}{\textit{Legal independence indices (\textcite{dincer_central_2024})}} \\
+\quad LVAU (unweighted) & 0.698 & 0.844 & +0.146 \\
+\quad LVAW (weighted) & 0.647 & 0.794 & +0.147 \\
+\quad LVES (narrow) & 0.560 & 1.000 & +0.440 \\
+\quad LVESX (extended narrow) & 0.736 & 1.000 & +0.264 \\
+\bottomrule
+\end{tabular}
+\smallskip
+\begin{minipage}{\linewidth}
+\footnotesize\textit{Notes:} All scores on a $[0,1]$ scale where 1 denotes maximum independence. Values are 2021 country means from \textcite{dincer_central_2024}, Table 5. LVAU and LVAW are the unweighted and weighted aggregations of eight components following \textcite{cukierman_measuring_1992}; LVES is a narrow index covering policy formulation and objectives, and LVESX extends it with limits on lending to the government.
+\end{minipage}
+\end{table}
+
+
+\begin{table}[htbp]
+\centering
+\caption{Comparison of De Jure Central Bank Independence Indices}
+\label{tab:cbi_index_comparison}
+\begin{tabular}{p{3.2cm}p{3.2cm}p{3.6cm}p{3.6cm}}
+\toprule
+ & \textcite{garriga_revisiting_2025} & \textcite{romelli_trends_2024} & \textcite{dincer_central_2024} \\
+\midrule
+Base tradition & CWN & GMT + CWN integrated & CWN \\
+\addlinespace
+Dimensions & 4 & 6 (adds financial independence, reporting/disclosure) & 4 (8 components) \\
+\addlinespace
+Disaggregated criteria & $\sim$CWN's 16 & 42 & CWN's 16 \\
+\addlinespace
+Coverage & 192 countries, 1970--2023 & 155 countries, 1923--2023 & 120 countries, 1800--2021 \\
+\addlinespace
+Aggregation & Unweighted + weighted & Weighted sub-indices & LVAU / LVAW / LVES / LVESX \\
+\addlinespace
+Distinctive feature & Broadest country coverage & Most criteria; new dimensions & Longest history; ML validation \\
+\bottomrule
+\end{tabular}
+\smallskip
+\begin{minipage}{\linewidth}
+\footnotesize\textit{Notes:} All three are \textit{de jure} indices derived from the Grilli, Masciandaro \& Tabellini (1991, ``GMT'') and Cukierman, Webb \& Neyapti (1992, ``CWN'') coding traditions. \textcite{garriga_revisiting_2025} codes four CWN dimensions (personnel independence, objectives, policy formulation, limits on lending). \textcite{romelli_trends_2024} integrates GMT and CWN and adds financial independence and reporting/disclosure criteria. \textcite{dincer_central_2024} applies the CWN 16-criterion scale and adds a machine-learning validation layer.
+\end{minipage}
+\end{table}
+
 I SHOULD TALK ABOUT THE PAPERS THAT CRITICIZE, IN PARTICULAR, ALESINA. 
+
+For de facto independence, we are going to have to focus on \textcite{binder_political_2021}. They have a very interesting piece.
 
 \subsection{Epistemological Assumptions in the Pro-CBI Literature}
 
