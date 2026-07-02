@@ -43,6 +43,9 @@ isbn=false,
 \usepackage{booktabs}
 \usepackage{appendix}
 
+%Floating tables- "H" keeps them in place
+\usepackage{float}
+
 \begin{document}
 
 \begin{doublespace}
@@ -155,6 +158,8 @@ Conceptualizations of regulatory capture are often rooted in the seminal work by
 
 \subsection{Epistemological Assumptions in the Economics Literature}
 
+
+\subsubsection{Theoretical Economics Modeling}
 %Normative Loading
 %The first evidence for structural regulatory capture should be in the epistemic environment that CBI is built upon. In particular, there is a significant economics literature defending CBI. Many policymakers in central banking that this is a well-established consensus, and few mainstream policymakers openly criticize this consensus. If central bank independence reflects the interest of finance, then, principally, those interests should be reflected in assumptions that govern empirical and theoretical analysis of central banking. 
 
@@ -188,9 +193,7 @@ The expansion of monetary policy's power, combined with the low interest rate en
 
 
 
-
-
-\subsection{Empirical Evidence and CBI Indices}
+\subsubsection{Empirical Evidence and CBI Indices}
 
 %Brainstorm: The central bank independence discussion- post-COVID inflation spike. Updating on past performance- CBI is tougher to justify after this spike. This is also a post-2020 episode; the discourse around the CBI had to change around inflation- but it really didn't.
 
@@ -200,7 +203,7 @@ The expansion of monetary policy's power, combined with the low interest rate en
 
 Economics literature has attempted to measure the influence of the aforementioned theoretical models through empirical analysis. Regarding both goal and instrument independence, it can be difficult to measure the level of influence of political figures on central bank decisions. Thus, many empirical papers distinguish between ``de jure" and ``de facto" indepndence. While de facto analysis attempts to analyze the personal influence of politics on central banking, de jure measures ground themselves in the law surrounding monetary governance, from appointment of central bank officials to the laws establishing the goals of monetary policy. 
 
-De jure CBI analysis often starts with references to \textcite{grilli_political_1991}, \textcite{cukierman_measuring_1992}, and \textcite{alesina_central_1993}. The former of these two papers take observable characteristics of the institutional setup of central banks, compile these observable metrics into an index that measures the degree of independence that a central bank has. \textcite{alesina_central_1993} produced a statistical model measuring how different levels of CBI influence economic variables like output and inflation, based on these indices. Indices define perfect de jure CBI as ``1" and complete de jure central bank dependence as ``0." The general approach by, in particular, \textcite{cukierman_measuring_1992} made a particularly large influence on empirical analysis, and it has been extended and adjusted repeatedly in papers including, but not limited to, \textcite{romelli_political_2022}, \textcite{romelli_trends_2024}, \textcite{dincer_central_2014}, and \textcite{garriga_revisiting_2025}. Because coding laws is a subjective process requiring decisions on a case-by-case basis, and deciding which types of laws to include in analysis is also a subjective proces, papers that have attempted to extend \textcite{cukierman_measuring_1992} can end up with different index values for the same country and time. Arguing for the merits of a given index or strategy is beyond the scope of this paper, but they all share a basic theoretical basis in the arguments initially presented by \textcite{kydland_rules_1977}, \textcite{barro_rules_1983}, and \textcite{rogoff_optimal_1985}. These empirical papers generally find one result, namely that the politicization of monetary policy raises inflation without boosting economic growth \parencite[4]{cochrane_central_2025}. 
+De jure CBI analysis often starts with references to \textcite{grilli_political_1991}, \textcite{cukierman_measuring_1992}, and \textcite{alesina_central_1993}. The former of these two papers take observable characteristics of the institutional setup of central banks, compile these observable metrics into an index that measures the degree of independence that a central bank has. \textcite{alesina_central_1993} produced a statistical model measuring how different levels of CBI influence economic variables like output and inflation, based on these indices. Indices define perfect de jure CBI as ``1" and complete de jure central bank dependence as ``0." The general approach by, in particular, \textcite{cukierman_measuring_1992} made a particularly large influence on empirical analysis, and it has been extended and adjusted repeatedly in papers including, but not limited to, \textcite{romelli_political_2022}, \textcite{romelli_trends_2024}, \textcite{dincer_central_2014}, and \textcite{garriga_revisiting_2025}. Because coding laws is a subjective process requiring decisions on a case-by-case basis, and deciding which types of laws to include in analysis is also a subjective proces, papers that have attempted to extend \textcite{cukierman_measuring_1992} can end up with different index values for the same country and time. Arguing for the merits of a given index or strategy is beyond the scope of this paper, but they all share a basic theoretical basis in the arguments initially presented by \textcite{kydland_rules_1977}, \textcite{barro_rules_1983}, and \textcite{rogoff_optimal_1985}. These empirical papers generally find one result, namely that the politicization of monetary policy raises inflation without boosting economic growth \parencite[4]{posen_introduction_2025}. 
 %adrian, \textcite{dincer_central_2014},
 
 
@@ -210,119 +213,30 @@ However, it is worth noting that these papers are not complete in their analysis
 %I feel like this is an important paragraph, so we want to return to it
 Because of this influence, it is valuable to interrogate the construction of these indices. A core feature of all of the aforementioned papers on de jure independence is that they conflate goal and target independence. Under the \textcite{fischer_central-bank_1995} model, even though instrument independence is optimal, the goals of monetary policy should be entirely set through political processes. The type of goals a central bank is set to achieve should thus not be relevant to a CBI index if that index is principally measuring instrument independence. However, all of the cited indices include some component of objectives in their index calculations. In particular, they define a codified ``price stability" target as the optimal measure of an independent central bank. This may be optimal for achieving the conservative central banker vision of monetary policy, but the definition itself has little to do with how independent a central bank is.
 
-
-\textcite{eijffinger_central_2026} describes the indices some more
-
-Recall that the United States legally has a ``tripartite" monetary policy mandate which it coloqially refers to as its ``dual mandate." As an aside, while in practice this may not significantly alter monetary policy, the ability for the Federal Reserve to simply ignore a piece of the law compromises the principle of goal independence. That said, all of the aforementioned de jure measures of CBI code the Federal Reserve's monetary policies as the ``dual mandate." The underlying problem for these indices is that if Congress decided to revise the Federal Reserve's mandate, this decision would alter the Federal Reserve's CBI score. For instance, if Congress eliminated the unemployment component of the dual mandate, the United States CBI score would universally increase. This intrinsic action does not influence, definitionally, goal \textit{or} instrument independence, because Congress would still be responsible for setting monetary policy objectives (goal dependence) and would not have changed its ability to influence individual policy decisions (instrument independence). However, the measurement of CBI in every de jure index would significantly changed.https://www.sweetwaternow.com/opinion-frafrica-world-cup-winners/
+Recall that the United States legally has a ``tripartite" monetary policy mandate which it coloqially refers to as its ``dual mandate." As an aside, while in practice this may not significantly alter monetary policy, the ability for the Federal Reserve to simply ignore a piece of the law compromises the principle of goal independence. That said, all of the aforementioned de jure measures of CBI code the Federal Reserve's monetary policies as the ``dual mandate." The underlying problem for these indices is that if Congress decided to revise the Federal Reserve's mandate, this decision would alter the Federal Reserve's CBI score. For instance, if Congress eliminated the unemployment component of the dual mandate, the United States CBI score would universally increase. This intrinsic action does not influence, definitionally, goal \textit{or} instrument independence, because Congress would still be responsible for setting monetary policy objectives (goal dependence) and would not have changed its ability to influence individual policy decisions (instrument independence). However, the measurement of CBI in every de jure index would significantly changed.
 
 
+The conflation of goal and instrument independence, built off the historical theoretical literature, has implications in the de jure measurement of CBI today. Using a comparison of the United States and T\"urkiye as a case study can be illuminative. ``The political system in T\"urkiye has been rapidly centralizing around the executive branch of the state, while the power of independent state institutions eroded" since 2011 \parencite[62]{demiralp_erosion_2019}. The Economist Intelligence Unit reported a significant decline in its measure of democracy in T\"urkiye from a peak of XXX in XXX to XXX in XXX. This trend has coincided with President Erdo\u{g}an increasing pressure on the CBRT to maintain low interest rates \parencite{gurkaynak_consequences_2023}. 
 
-The conflation of goal and instrument independence, built off the historical theoretical literature, has implications in the de jure measurement of CBI today. Using a comparison of the United States and T\"urkiye as a case study can be illuminative. ``The political system in Turkey has been rapidly centralizing around the executive branch of the state, while the power of independent state institutions eroded" since 2011 \parencite[62]{demiralp_erosion_2019}. The Economist Intelligence Unit reported a significant decline in its measure of democracy in T\"urkiye from a peak of XXX in XXX to XXX in XXX. This trend has coincided with President Erdo\u{g}an increasing pressure on the CBRT to maintain low interest rates \parencite{gurkaynak_consequences_2023}. 
+Inflation rapidly spiked in 2018 in T\"urkiye, particularly following a constitutional reform that dramatically increased President Erdo\u{g}an's political power. Following the reform, the CBRT fully implemented President Erdo\u{g}an's unorthodox view that lower interest rates reduces (rather than increases) inflation, on average. A variety of papers, from XXX to XXX, have attributed the political pressure on the CBRT to the rapid spike in inflation that the Turkish economy has experienced, particularly following the COVID pandemic. Figure \ref{fig:turkishinflation} displays Turkish inflation from 1990-2024. Between 2003 and 2016, Turkish inflation remained below ten percent. From 2017 on, the rate rose to above 10 percent, and between 2020 and 2022, the rate spikes from 12 to 72 percent. 
 
-Inflation rapidly spiked in 2018 in T\"urkiye, particularly following a constitutional reform that dramatically increased President Erdo\u{g}an's political power. Following the reform, the CBRT fully implemented President Erdo\u{g}an's unorthodox view that lower interest rates reduces (rather than increases) inflation, on average. 
-
-\textcite{gurkaynak_consequences_2023} acknowledge how 
-
-The Central Bank of the Republic of T\"urkiye (CBRT) experienced 
-
-
-As background, T\"urkiye underwent a constitutional reform in 2017, where President Erdo\u{g}an transitioned 
-
-
-
-
-American policymakers and economists often cite T\"urkiye as an exampl  
-
-Description of the tables
-
-Some may argue that this better measures de facto rather than de jure independence.
-
-https://www.brookings.edu/articles/challenges-to-independence-how-should-central-banks-respond-lessons-from-history/#:~:text=We%20have%20extensive%20evidence%E2%80%94across,electoral%20incentives%20make%20it
-
-\begin{table}[htbp]
+\begin{figure}[h]
 \centering
-\caption{Central Bank Independence Scores: United States vs.\ T\"urkiye (2023), \textcite{romelli_trends_2024} }
-\label{tab:us_T\"urkiye_cbi}
-\begin{tabular}{lccc}
-\toprule
-\textbf{Index / Sub-index} & \textbf{USA} & \textbf{T\"urkiye} & \textbf{Gap} \\
- & \textbf{(2023)} & \textbf{(2023)} & \textbf{(T\"urkiye $-$ USA)} \\
-\midrule
-\multicolumn{4}{l}{\textit{CBIE Index}} \\
-\quad Overall & 0.614 & 0.801 & +0.187 \\
-\quad Board independence & 0.506 & 0.590 & +0.084 \\
-\quad Policy independence & 0.700 & 0.800 & +0.100 \\
-\quad \textbf{Objectives} & \textbf{0.250} & \textbf{1.000} & \textbf{+0.750} \\
-\quad Lending restrictions & 0.938 & 1.000 & +0.063 \\
-\quad Financial independence & 0.667 & 0.667 & \phantom{+}0.000 \\
-\quad Reporting \& accountability & 0.625 & 0.750 & +0.125 \\
-\midrule
-\multicolumn{4}{l}{\textit{Comparison indices}} \\
-\quad GMT Index (normalised) & 0.750 & 0.813 & +0.063 \\
-\quad CWN Index (unweighted) & 0.808 & 0.909 & +0.101 \\
-\quad CWN Index (weighted) & 0.735 & 0.867 & +0.132 \\
-\bottomrule
-\end{tabular}
-\smallskip
-\begin{minipage}{\linewidth}
-\footnotesize\textit{Notes:} All scores are on a $[0,1]$ scale where 1 denotes maximum independence. Data sourced directly from sources referenced in the table. The bolded ``Objectives" sub-index from \textcite{romelli_trends_2024} measures the degree to which price stability is the sole or primary statutory mandate. GMT references the index first produced by \textcite{grilli_political_1991}, while CWN references \textcite{cukierman_measuring_1992}. Both were recoded and extended by \textcite{romelli_trends_2024}.
-\end{minipage}
-\end{table}
-
-
-\begin{table}[htbp]
+\caption{Turkish Inflation, 1990-2024}
+\label{fig:turkishinflation}
+\begin{minipage}{0.65\textwidth} % choose width suitably
 \centering
-\caption{Central Bank Independence Scores: United States vs.\ T\"urkiye (2023), \textcite{garriga_revisiting_2025}}
-\label{tab:garriga_us_T\"urkiye}
-\begin{tabular}{lccc}
-\toprule
-\textbf{Index / Sub-index} & \textbf{USA} & \textbf{T\"urkiye} & \textbf{Gap} \\
- & \textbf{(2023)} & \textbf{(2023)} & \textbf{(T\"urkiye $-$ USA)} \\
-\midrule
-\multicolumn{4}{l}{\textit{CWN Index}} \\
-\quad Overall (unweighted) & 0.391 & 0.861 & +0.470 \\
-\quad Overall (weighted)   & 0.475 & 0.899 & +0.424 \\
-\midrule
-\multicolumn{4}{l}{\textit{Sub-indices}} \\
-\quad CEO independence        & 0.438 & 0.645 & +0.207 \\
-\quad \textbf{Objectives}    & \textbf{0.400} & \textbf{0.800} & \textbf{+0.400} \\
-\quad \textbf{Policy formulation} & \textbf{0.100} & \textbf{1.000} & \textbf{+0.900} \\
-\quad Limitations on lending & 0.626 & 1.000 & +0.374 \\
-\bottomrule
-\end{tabular}
-\smallskip
-\begin{minipage}{\linewidth}
-\footnotesize\textit{Notes:} All scores are on a $[0,1]$ scale where 1 denotes maximum independence. Data sourced from \textcite{garriga_revisiting_2025}, following \textcite{cukierman_measuring_1992} coding criteria. The Objectives sub-index measures the degree to which price stability is the sole or primary statutory mandate. The policy formulation component comprises who formulates monetary policy, the conflict resolution process, and the central bank's influence on the government's budgetary process.
+\includegraphics[scale = 0.8]{Turk Inflation.png}
+\footnotesize{\textit{Source:} World \textcite{world_bank_inflation_2026}\par} 
 \end{minipage}
-\end{table}
+\end{figure}
 
+A variety of commentators have described the Turkish situation as evidence about the importance of the erosion of CBI, and they have applied it to the American context. \textcite{posen_introduction_2025} attaches this spike to President Erdo\u{g}an removing and replacing central bank governors who do not support his views for monetary policy. \textcite[530]{gurkaynak_consequences_2023} cite the decay of CBI in T\"urkiye as the ``only plausible answer" for the lack of a strong anti-inflationary response to the CBRT. Such firings serve as a method of eroding operational independence for the CBRT, where individual interest rates become heavily biased by the executive authority, not the technocrats running the CBRT. While \textcite{jeddy_cautionary_2025} warns that President Trump's political pressure on the Fed may result in a similar story to T\"urkiye. However, to date, President Trump has been unsuccessful in removing Federal Reserve policymakers from office. With some caveats, the Federal Reserve's ``institutional strength is well established," meaning that the Turkish erosion of CBI did not occur in the United States, despite President Trump's pressure \textcite[542]{cakmakli_financial_2024}.
 
-This is the \textcite{dincer_central_2024}. I couldn't get the breakdown data, but they include the price stability stuff. Note thatt this is built on \textcite{eijffinger_how_2006}.
+Despite this, the conflation of goal and instrument independence within the de jure measures of central bank independence result in T\"urkiye having a uniformly \textit{higher} score than the Federal Reserve.  First, it is worth noting that de jure indices, despite being largely based on the core framework from \textcite{cukierman_measuring_1992}, do make a series of subjective coding and methodology decisions. The way that the de jure indices utilized in this paper differ are summarized in table \ref{tab:cbi_index_comparison}. I cite these differences not to argue which methodology is ``best," but rather to establish that there is some academic debate ongoing about the most appropriate methodology for a de jure CBI index, and different measurement strategies are already being developed in the literature.  Despite all of the different methodologies, all three papers include the goals of a central bank as an integral part of their measurement schemes.\footnote{The component data for \textcite[399]{dincer_central_2024} was unavailable, but the methodology confirms the inclusion of an ``Objectives Component" which studies the ``objectives of the central bank, including an emphasis on price stability versus other goals}.
 
-\begin{table}[htbp]
-\centering
-\caption{Central Bank Independence Scores: United States vs.\ T\"urkiye (2023), \textcite{dincer_central_2024}}
-\label{tab:us_T\"urkiye_dem}
-\begin{tabular}{lccc}
-\toprule
-\textbf{Index} & \textbf{USA} & \textbf{T\"urkiye} & \textbf{Gap} \\
- & \textbf{(2021)} & \textbf{(2021)} & \textbf{(T\"urkiye $-$ USA)} \\
-\midrule
-\multicolumn{4}{l}{\textit{Legal independence indices}} \\
-\quad LVAU (unweighted) & 0.698 & 0.844 & +0.146 \\
-\quad LVAW (weighted) & 0.647 & 0.794 & +0.147 \\
-\quad LVES (narrow) & 0.560 & 1.000 & +0.440 \\
-\quad LVESX (extended narrow) & 0.736 & 1.000 & +0.264 \\
-\bottomrule
-\end{tabular}
-\smallskip
-\begin{minipage}{\linewidth}
-\footnotesize\textit{Notes:} All scores on a $[0,1]$ scale where 1 denotes maximum independence. Values are 2021 country means from \textcite{dincer_central_2024}, Table 5. LVAU and LVAW are the unweighted and weighted aggregations of eight components following \textcite{cukierman_measuring_1992}; LVES is a narrow index covering policy formulation and objectives, and LVESX extends it with limits on lending to the government.
-\end{minipage}
-\end{table}
-
-
-\begin{table}[htbp]
+\begin{singlespace}
+\begin{table}[H]
 \centering
 \caption{Comparison of De Jure Central Bank Independence Indices}
 \label{tab:cbi_index_comparison}
@@ -348,9 +262,107 @@ Distinctive feature & Broadest country coverage & Most criteria; new dimensions 
 \footnotesize\textit{Notes:} All three are \textit{de jure} indices derived from the Grilli, Masciandaro \& Tabellini (1991, ``GMT'') and Cukierman, Webb \& Neyapti (1992, ``CWN'') coding traditions. \textcite{garriga_revisiting_2025} codes four CWN dimensions (personnel independence, objectives, policy formulation, limits on lending). \textcite{romelli_trends_2024} integrates GMT and CWN and adds financial independence and reporting/disclosure criteria. \textcite{dincer_central_2024} applies the CWN 16-criterion scale and adds a machine-learning validation layer.
 \end{minipage}
 \end{table}
+\end{singlespace}
 
-I SHOULD TALK ABOUT THE PAPERS THAT CRITICIZE, IN PARTICULAR, ALESINA. 
+All of the aforementioned indices measure the CBRT as being more independent than the Federal Reserve. Tables \ref{tab:romelli_cbi}, \ref{tab:garriga_us_cbi}, and \ref{tab:dincer_cbi} show a comparison of how the United States Federal Reserve scores on de jure independence measures relative to CBI. At face value, this makes sense, given what these indices are measuring. The CBRT's mandate was revised following the Turkish currency crisis in 2001, and it was written to match the international norms of central bank independence that is now well established in countries around the world. Thus, if these indices were measuring ``how well a law chartering a central bank encapsulates the international norms associated with CBI," the Turkish laws fit perfectly.
 
+However, these indices do not measure independence, for two reasons. First, these measures leave out the strength of the institutions enforcing the laws of the central bank.
+
+ The Fed is not ``more independent" in any subindex (although it ties in ``Financial independence" subindex from \textcite{romelli_trends_2024}). The `objectives" component gives the biggest gap between the two nations for \textcite{romelli_trends_2024} and the second most for \textcite{garriga_revisiting_2025}. 
+
+
+%https://www.brookings.edu/articles/challenges-to-independence-how-should-central-banks-respond-lessons-from-history/#:~:text=We%20have%20extensive%20evidence%E2%80%94across,electoral%20incentives%20make%20it
+
+\begin{singlespace}
+\begin{table}[H]
+\centering
+\caption{Central Bank Independence Scores: United States vs.\ T\"urkiye (2023), \textcite{romelli_trends_2024} }
+\label{tab:romelli_cbi}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Index / Sub-index} & \textbf{USA} & \textbf{T\"urkiye} & \textbf{Gap} \\
+ & \textbf{(2023)} & \textbf{(2023)} & \textbf{(T\"urkiye $-$ USA)} \\
+\midrule
+\multicolumn{4}{l}{\textit{CBIE Index}} \\
+\quad Overall & 0.614 & 0.801 & +0.187 \\
+\quad Board independence & 0.506 & 0.590 & +0.084 \\
+\quad Policy independence & 0.700 & 0.800 & +0.100 \\
+\quad \textbf{Objectives} & \textbf{0.250} & \textbf{1.000} & \textbf{+0.750} \\
+\quad Lending restrictions & 0.938 & 1.000 & +0.063 \\
+\quad Financial independence & 0.667 & 0.667 & \phantom{+}0.000 \\
+\quad Reporting \& accountability & 0.625 & 0.750 & +0.125 \\
+\midrule
+\multicolumn{4}{l}{\textit{Comparison indices}} \\
+\quad GMT Index (normalised) & 0.750 & 0.813 & +0.063 \\
+\quad CWN Index (unweighted) & 0.808 & 0.909 & +0.101 \\
+\quad CWN Index (weighted) & 0.735 & 0.867 & +0.132 \\
+\bottomrule
+\end{tabular}
+\smallskip
+\begin{minipage}{\linewidth}
+\footnotesize\textit{Notes:} All scores are on a $[0,1]$ scale where 1 denotes maximum independence. Data sourced directly from sources referenced in the table. The bolded ``Objectives" sub-index from \textcite{romelli_trends_2024} measures the degree to which price stability is the sole or primary statutory mandate. GMT references the index first produced by \textcite{grilli_political_1991}, while CWN references \textcite{cukierman_measuring_1992}. Both were recoded and extended by \textcite{romelli_trends_2024}.
+\end{minipage}
+\end{table}
+\end{singlespace}
+
+\begin{singlespace}
+\begin{table}[H]
+\centering
+\caption{Central Bank Independence Scores: United States vs.\ T\"urkiye (2023), \textcite{garriga_revisiting_2025}}
+\label{tab:garriga_us_cbi}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Index / Sub-index} & \textbf{USA} & \textbf{T\"urkiye} & \textbf{Gap} \\
+ & \textbf{(2023)} & \textbf{(2023)} & \textbf{(T\"urkiye $-$ USA)} \\
+\midrule
+\multicolumn{4}{l}{\textit{CWN Index}} \\
+\quad Overall (unweighted) & 0.391 & 0.861 & +0.470 \\
+\quad Overall (weighted)   & 0.475 & 0.899 & +0.424 \\
+\midrule
+\multicolumn{4}{l}{\textit{Sub-indices}} \\
+\quad CEO independence        & 0.438 & 0.645 & +0.207 \\
+\quad \textbf{Objectives}    & \textbf{0.400} & \textbf{0.800} & \textbf{+0.400} \\
+\quad \textbf{Policy formulation} & \textbf{0.100} & \textbf{1.000} & \textbf{+0.900} \\
+\quad Limitations on lending & 0.626 & 1.000 & +0.374 \\
+\bottomrule
+\end{tabular}
+\smallskip
+\begin{minipage}{\linewidth}
+\footnotesize\textit{Notes:} All scores are on a $[0,1]$ scale where 1 denotes maximum independence. Data sourced from \textcite{garriga_revisiting_2025}, following \textcite{cukierman_measuring_1992} coding criteria. The Objectives sub-index measures the degree to which price stability is the sole or primary statutory mandate. The policy formulation component comprises who formulates monetary policy, the conflict resolution process, and the central bank's influence on the government's budgetary process.
+\end{minipage}
+\end{table}
+\end{singlespace}
+
+
+\begin{singlespace}
+\begin{table}[H]
+\centering
+\caption{Central Bank Independence Scores: United States vs.\ T\"urkiye (2023), \textcite{dincer_central_2024}}
+\label{tab:dincer_cbi}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Index} & \textbf{USA} & \textbf{T\"urkiye} & \textbf{Gap} \\
+ & \textbf{(2021)} & \textbf{(2021)} & \textbf{(T\"urkiye $-$ USA)} \\
+\midrule
+\multicolumn{4}{l}{\textit{Legal independence indices}} \\
+\quad LVAU (unweighted) & 0.698 & 0.844 & +0.146 \\
+\quad LVAW (weighted) & 0.647 & 0.794 & +0.147 \\
+\quad LVES (narrow) & 0.560 & 1.000 & +0.440 \\
+\quad LVESX (extended narrow) & 0.736 & 1.000 & +0.264 \\
+\bottomrule
+\end{tabular}
+\smallskip
+\begin{minipage}{\linewidth}
+\footnotesize\textit{Notes:} All scores on a $[0,1]$ scale where 1 denotes maximum independence. Values are 2021 country means from \textcite{dincer_central_2024}, Table 5. LVAU and LVAW are the unweighted and weighted aggregations of eight components following \textcite{cukierman_measuring_1992}; LVES is a narrow index covering policy formulation and objectives, and LVESX extends it with limits on lending to the government.
+\end{minipage}
+\end{table}
+\end{singlespace}
+
+\subsubsection{De Facto Independence}
+
+\textcite{eijffinger_central_2026} describes the indices some more
+
+Some may argue that this better measures de facto rather than de jure independence.
 For de facto independence, we are going to have to focus on \textcite{binder_political_2021}. They have a very interesting piece.
 
 
@@ -378,6 +390,5 @@ For de facto independence, we are going to have to focus on \textcite{binder_pol
 \newpage
 
 \printbibliography
-
 
 \end{document}
