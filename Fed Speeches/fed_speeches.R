@@ -1,3 +1,12 @@
+# This code downloads 5,000 governor speeches from 1997
+# (with 1 1996 speech) to 2025. 
+# https://huggingface.co/datasets/istat-ai/ECB-FED-speeches
+# Downloaded on July 6, 2025
+# The texts were obtained from the BIS
+
+# I then added a code that downloads 1996 speeches fo
+
+
 rm(list = ls())
 gc()
 
@@ -5,6 +14,7 @@ library(tidyverse)
 library(httr)
 library(jsonlite)
 
+#Dummy for actually downloading the speeches.
 download_speeches = F
 
 if(download_speeches == T){
@@ -57,13 +67,53 @@ while (offset < total_rows) {
 speeches_full <- bind_rows(all_pages)
 
 # Verify
-nrow(speeches_full)
-
+nrow(speeches_full)  
+  
 write_csv(speeches_full, "Fed Speeches/fed_speeches.csv")
 
 }
 
-speeches_full <- read_csv("Fed Speeches/fed_speeches.csv")
+speeches_hf_full <- read_csv("Fed Speeches/fed_speeches.csv") 
+speeches_hf <- speeches_hf_full %>%
+  select(-truncated_cells) %>%
+  rename_with(~ sub("^row\\.", "", .x)) %>%
+  rename_with(~ sub("^row_", "", .x)) %>%
+  select(date, author, country, 
+    title_hf = title, text_hf = text, clean_text_hf = clean_text,
+    description_hf = description, idx_huggingface = idx, url_hf = url) %>%
+  mutate(date = as.Date(date)) 
+
+speeches_kaggle_full <- read_csv("Fed Speeches/fed_speeches_1996_2020.csv") 
+speeches_kaggle <- speeches_kaggle_full %>%
+  rename(url_kaggle = link) %>%
+  mutate(country = "United States",
+    date = as.Date(as.character(date), format = "%Y%m%d"),
+    author = gsub("Governor |Chairman |Chair |Vice Chair |Vice Chairman |for Supervision |\\.|", "", speaker)) %>%
+  select(date, author, country, event_ka = event,
+    title_ka = title, text_ka = text) %>%
+  arrange(date)
+
+###There's some duplicates in this, but there's no reason to filter exactly. I'll double check each sub sample.
+# Row 54 of `x` matches multiple rows in `y`.
+# Row 50 of `y` matches multiple rows in `x`.
+speeches_final = full_join(speeches_kaggle, speeches_hf, by = c("date", "author", "country")) %>%
+  arrange(date) %>% relocate(date, author, title_hf, title_ka, clean_text_hf, text_ka) %>%
+  mutate(clean_text_hf = tolower(clean_text_hf), text_ka = tolower(text_ka)) 
+
+
+write_csv(speeches_final, "Fed Speeches/speeches_final.csv")
+
+
+price_stability <- speeches_final %>%
+  filter(str_detect(clean_text_hf, "price stability") | str_detect(text_ka, "price stability")) %>%
+  filter(str_detect(clean_text_hf, "independence") | str_detect(text_ka, "independence")) %>%
+  filter(country == "United States")
+
+write_csv(price_stability, "Fed Speeches/price_stability.csv")
+  
+
+independence <- speeches_final %>%
+  filter(str_detect(clean_text_hf, "independence"))
 
 ###OLD
 {
