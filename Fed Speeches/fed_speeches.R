@@ -17,7 +17,10 @@ library(jsonlite)
 #Dummy for actually downloading the speeches.
 download_speeches = F
 
-if(download_speeches == T){
+#Dummy for reproducing the full speeches CSV
+full_speeches_csv = F
+
+if(download_speeches){
 
 base_url <- "https://datasets-server.huggingface.co/rows"
 dataset <- "istat-ai/ECB-FED-speeches"
@@ -73,6 +76,7 @@ write_csv(speeches_full, "Fed Speeches/fed_speeches.csv")
 
 }
 
+if(full_speeches_csv){
 speeches_hf_full <- read_csv("Fed Speeches/fed_speeches.csv") 
 speeches_hf <- speeches_hf_full %>%
   select(-truncated_cells) %>%
@@ -85,67 +89,111 @@ speeches_hf <- speeches_hf_full %>%
 
 speeches_kaggle_full <- read_csv("Fed Speeches/fed_speeches_1996_2020.csv") 
 speeches_kaggle <- speeches_kaggle_full %>%
-  rename(url_kaggle = link) %>%
+  rename(url_ka = link) %>%
   mutate(country = "United States",
     date = as.Date(as.character(date), format = "%Y%m%d"),
     author = gsub("Governor |Chairman |Chair |Vice Chair |Vice Chairman |for Supervision |\\.|", "", speaker)) %>%
   select(date, author, country, event_ka = event,
-    title_ka = title, text_ka = text) %>%
+    title_ka = title, text_ka = text, url_ka) %>%
   arrange(date)
 
 ###There's some duplicates in this, but there's no reason to filter exactly. I'll double check each sub sample.
 # Row 54 of `x` matches multiple rows in `y`.
 # Row 50 of `y` matches multiple rows in `x`.
 speeches_final = full_join(speeches_kaggle, speeches_hf, by = c("date", "author", "country")) %>%
-  arrange(date) %>% relocate(date, author, title_hf, title_ka, clean_text_hf, text_ka) %>%
-  mutate(clean_text_hf = tolower(clean_text_hf), text_ka = tolower(text_ka)) 
+  arrange(date)  %>%
+  mutate(clean_text_hf = tolower(clean_text_hf), text_hf = tolower(text_hf),
+    text_ka = tolower(text_ka)) 
+
+
+# --- split long text columns for Excel (32,767 char/cell limit) ---
+limit <- 32000L  # safety margin
+
+split_into_chunks <- function(x, size = limit) {
+  x <- if (is.na(x)) "" else x
+  n <- nchar(x)
+  if (n == 0) return("")
+  starts <- seq(1L, n, by = size)
+  substring(x, starts, pmin(starts + size - 1L, n))
+}
+
+split_column <- function(df, col) {
+  vals <- df[[col]]
+  max_chunks <- max(1L, purrr::map_int(vals, ~ length(split_into_chunks(.x))))
+
+  chunk_cols <- purrr::map(vals, split_into_chunks) %>%
+    purrr::map(~ { length(.x) <- max_chunks; .x }) %>%
+    purrr::transpose() %>%
+    purrr::map(~ purrr::map_chr(.x, ~ if (is.null(.x)) NA_character_ else .x))
+
+  col_names <- c(col, paste0(col, 2:max_chunks))
+  df[[col]] <- NULL
+  for (i in seq_len(max_chunks)) df[[col_names[i]]] <- chunk_cols[[i]]
+
+  # keep the new columns where the original was
+  dplyr::relocate(df, dplyr::all_of(col_names))
+}
+
+speeches_final <- speeches_final %>%
+  split_column("clean_text_hf") %>%
+  split_column("text_hf") %>%
+  split_column("text_ka") %>% relocate(date, author, title_hf, title_ka, contains("clean_text_hf"), 
+    contains("text_ka"))
+# --- end split ---
 
 
 write_csv(speeches_final, "Fed Speeches/speeches_final.csv")
-
-
-price_stability <- speeches_final %>%
-  filter(str_detect(clean_text_hf, "price stability") | str_detect(text_ka, "price stability")) %>%
-  filter(str_detect(clean_text_hf, "independence") | str_detect(text_ka, "independence")) %>%
-  filter(country == "United States")
-
-write_csv(price_stability, "Fed Speeches/price_stability.csv")
-  
-
-independence <- speeches_final %>%
-  filter(str_detect(clean_text_hf, "independence"))
-
-###OLD
-{
-# # Build the request URL
-# # url <- "https://datasets-server.huggingface.co/rows?dataset=istat-ai%2FECB-FED-speeches&config=default&split=train&offset=0&length=100"
-# # url <- "https://datasets-server.huggingface.co/splits?dataset=istat-ai%2FECB-FED-speeches"
-# # url <- "https://huggingface.co/api/datasets/istat-ai/ECB-FED-speeches/parquet/default/train"
-
-# url <- "https://datasets-server.huggingface.co/rows?dataset=istat-ai%2FECB-FED-speeches&config=default&split=train&offset=0&length=100"
-
-
-# # GET request
-# resp <- GET(url)
-
-# # Check status
-# stop_for_status(resp)
-
-# # Parse JSON content
-# data_raw <- content(resp, as = "text", encoding = "UTF-8")
-# data_json <- fromJSON(data_raw, flatten = TRUE)
-
-# # The actual rows are nested under $rows$row
-# speeches_df <- data_json$rows$
-
-# speeches_df$rows
-
-# # Inspect structure
-# # str(speeches_df)
-# # head(speeches_df)
-
-# size_url <- "https://datasets-server.huggingface.co/size?dataset=istat-ai%2FECB-FED-speeches"
-# size_resp <- GET(size_url)
-# size_info <- fromJSON(content(size_resp, as = "text", encoding = "UTF-8"))
-# print(size_info$size$dataset$num_rows)
 }
+
+speeches_final <- read_csv("Fed Speeches/speeches_final.csv") 
+
+
+
+speeches_usa <- speeches_final %>%
+  filter(country == "United States") %>%
+  mutate(
+    cukierman = if_else(if_any(c(starts_with("clean_text_hf"),
+          starts_with("text_hf"), starts_with("text_ka")),
+                ~ str_detect(coalesce(., ""), "cukierman")), T, F),
+    rogoff = if_else(if_any(c(starts_with("clean_text_hf"),
+          starts_with("text_hf"), starts_with("text_ka")),
+                ~ str_detect(coalesce(., ""), "rogoff")), T, F),
+    posen = if_else(if_any(c(starts_with("clean_text_hf"),
+          starts_with("text_hf"), starts_with("text_ka")),
+                ~ str_detect(coalesce(., ""), "posen")), T, F),
+    alesina = if_else(if_any(c(starts_with("clean_text_hf"),
+          starts_with("text_hf"), starts_with("text_ka")),
+                ~ str_detect(coalesce(., ""), "alesina")), T, F),
+    kydland = if_else(if_any(c(starts_with("clean_text_hf"),
+          starts_with("text_hf"), starts_with("text_ka")),
+                ~ str_detect(coalesce(., ""), "kydland")), T, F)
+  ) %>%
+  arrange(-posen, date)
+
+write_csv(speeches_usa, "Fed Speeches/speeches_usa.csv")
+
+paper_speeches <- speeches_usa %>%
+  filter(cukierman|rogoff|posen|alesina|kydland)
+
+write_csv(paper_speeches, "Fed Speeches/paper_speeches.csv")
+
+# independence <- speeches_final %>%
+#   filter(if_any(c(starts_with("clean_text_hf"), starts_with("text_ka")),
+#                 ~ str_detect(., "independence")))  %>%
+#   filter(country == "United States")
+# dual_mandate <- speeches_final %>%
+#   filter(if_any(c(starts_with("clean_text_hf"), starts_with("text_ka")),
+#                 ~ str_detect(., "dual mandate")))  %>%
+#   filter(country == "United States")
+
+# write_csv(independence, "Fed Speeches/independence.csv")
+# write_csv(dual_mandate, "Fed Speeches/dual_mandate.csv")
+
+# price_stability <- speeches_final %>%
+#   filter(if_any(c(starts_with("clean_text_hf"), starts_with("text_ka")),
+#                 ~ str_detect(., "price stability"))) %>%
+#   filter(if_any(c(starts_with("clean_text_hf"), starts_with("text_ka")),
+#                 ~ str_detect(., "independence"))) %>%
+#   filter(country == "United States")
+
+# write_csv(price_stability, "Fed Speeches/price_stability.csv")
