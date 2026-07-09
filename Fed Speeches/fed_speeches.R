@@ -145,11 +145,12 @@ speeches_final <- speeches_final %>%
 write_csv(speeches_final, "Fed Speeches/speeches_final.csv")
 }
 
-speeches_final <- read_csv("Fed Speeches/speeches_final.csv") 
+speeches_final <- read_csv("Fed Speeches/speeches_final.csv") %>%
+  relocate(date, author, title_hf, title_ka, url_hf, url_ka)
 
 
 
-speeches_usa <- speeches_final %>%
+paper_speeches <- speeches_final %>%
   filter(country == "United States") %>%
   mutate(
     cukierman = if_else(if_any(c(starts_with("clean_text_hf"),
@@ -168,32 +169,36 @@ speeches_usa <- speeches_final %>%
           starts_with("text_hf"), starts_with("text_ka")),
                 ~ str_detect(coalesce(., ""), "kydland")), T, F)
   ) %>%
-  arrange(-posen, date)
-
-write_csv(speeches_usa, "Fed Speeches/speeches_usa.csv")
-
-paper_speeches <- speeches_usa %>%
-  filter(cukierman|rogoff|posen|alesina|kydland)
+  filter(cukierman|rogoff|posen|alesina|kydland) %>%
+  arrange(date)
 
 write_csv(paper_speeches, "Fed Speeches/paper_speeches.csv")
 
-# independence <- speeches_final %>%
-#   filter(if_any(c(starts_with("clean_text_hf"), starts_with("text_ka")),
-#                 ~ str_detect(., "independence")))  %>%
-#   filter(country == "United States")
-# dual_mandate <- speeches_final %>%
-#   filter(if_any(c(starts_with("clean_text_hf"), starts_with("text_ka")),
-#                 ~ str_detect(., "dual mandate")))  %>%
-#   filter(country == "United States")
+paper_speeches_final <- speeches_final %>%
+  filter(country == "United States") %>%
+  mutate(
+    rogoff = if_any(
+      c(starts_with("clean_text_hf"), starts_with("text_hf"), starts_with("text_ka")),
+      ~ str_detect(coalesce(., ""),
+        "rogoff, kenneth \\(1985|rogoff \\(1985|rogoff, 1985|rogoff, kenneth, 1985")
+    ),
+    alesina = if_any(
+      c(starts_with("clean_text_hf"), starts_with("text_hf"), starts_with("text_ka")),
+      ~ str_detect(coalesce(., ""),
+        "alesina, alberto, and lawrence h\\. summers \\(1993|alberto alesina and lawrence h\\. summers \\(1993|alberto alesina and lawrence summers \\(1993|alesina and summers \\(1993")
+    ),
+    kydland = if_any(
+      c(starts_with("clean_text_hf"), starts_with("text_hf"), starts_with("text_ka")),
+      ~ str_detect(coalesce(., ""),
+        "rules rather than discretion|kydland and ed prescott")
+    ),
+    cukierman = if_any(
+      c(starts_with("clean_text_hf"), starts_with("text_hf"), starts_with("text_ka")),
+      ~ str_detect(coalesce(., ""),
+        "cukierman(?![^0-9]{0,12}1991)(?![\\s\\S]{0,30}meltzer)")
+    )
+  ) %>%
+  filter(cukierman|rogoff|alesina|kydland)
 
-# write_csv(independence, "Fed Speeches/independence.csv")
-# write_csv(dual_mandate, "Fed Speeches/dual_mandate.csv")
 
-# price_stability <- speeches_final %>%
-#   filter(if_any(c(starts_with("clean_text_hf"), starts_with("text_ka")),
-#                 ~ str_detect(., "price stability"))) %>%
-#   filter(if_any(c(starts_with("clean_text_hf"), starts_with("text_ka")),
-#                 ~ str_detect(., "independence"))) %>%
-#   filter(country == "United States")
-
-# write_csv(price_stability, "Fed Speeches/price_stability.csv")
+write_csv(paper_speeches_final, "Fed Speeches/paper_speeches_final.csv")
