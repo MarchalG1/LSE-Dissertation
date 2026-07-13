@@ -148,7 +148,13 @@ write_csv(speeches_final, "Fed Speeches/speeches_final.csv")
 speeches_final <- read_csv("Fed Speeches/speeches_final.csv") %>%
   relocate(date, author, title_hf, title_ka, url_hf, url_ka)
 
+dual_mandate <- paper_speeches <- speeches_final %>%
+  filter(country == "United States") %>%
+  filter(if_any(c(starts_with("clean_text_hf"),
+          starts_with("text_hf"), starts_with("text_ka")),
+                ~ str_detect(coalesce(., ""), "dual mandate")))
 
+write_csv(paper_speeches, "Fed Speeches/dual_mandate.csv")
 
 paper_speeches <- speeches_final %>%
   filter(country == "United States") %>%
@@ -159,9 +165,9 @@ paper_speeches <- speeches_final %>%
     rogoff = if_else(if_any(c(starts_with("clean_text_hf"),
           starts_with("text_hf"), starts_with("text_ka")),
                 ~ str_detect(coalesce(., ""), "rogoff")), T, F),
-    posen = if_else(if_any(c(starts_with("clean_text_hf"),
+    grilli = if_else(if_any(c(starts_with("clean_text_hf"),
           starts_with("text_hf"), starts_with("text_ka")),
-                ~ str_detect(coalesce(., ""), "posen")), T, F),
+                ~ str_detect(coalesce(., ""), "grilli")), T, F),
     alesina = if_else(if_any(c(starts_with("clean_text_hf"),
           starts_with("text_hf"), starts_with("text_ka")),
                 ~ str_detect(coalesce(., ""), "alesina")), T, F),
@@ -169,7 +175,7 @@ paper_speeches <- speeches_final %>%
           starts_with("text_hf"), starts_with("text_ka")),
                 ~ str_detect(coalesce(., ""), "kydland")), T, F)
   ) %>%
-  filter(cukierman|rogoff|posen|alesina|kydland) %>%
+  filter(cukierman|rogoff|grilli|alesina|kydland) %>%
   arrange(date)
 
 write_csv(paper_speeches, "Fed Speeches/paper_speeches.csv")
@@ -196,9 +202,14 @@ paper_speeches_final <- speeches_final %>%
       c(starts_with("clean_text_hf"), starts_with("text_hf"), starts_with("text_ka")),
       ~ str_detect(coalesce(., ""),
         "cukierman(?![^0-9]{0,12}1991)(?![\\s\\S]{0,30}meltzer)")
-    )
-  ) %>%
-  filter(cukierman|rogoff|alesina|kydland)
+    ),
+    grilli = if_any(
+      c(starts_with("clean_text_hf"), starts_with("text_hf"), starts_with("text_ka")),
+      ~ str_detect(coalesce(., ""),
+        "grilli")
+  )
+    )    %>%
+  filter(cukierman|rogoff|alesina|kydland|grilli)
 
 
 write_csv(paper_speeches_final, "Fed Speeches/paper_speeches_final.csv")
