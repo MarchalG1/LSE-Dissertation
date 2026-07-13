@@ -153,6 +153,7 @@ Decisions with distributional or normative consequences are traditionally handle
 
 Other work has already established the role of finance in the Federal Reserve, from the revolving door to financiers having dedicated positions on regional bank boards. My intention here is to add a new dimension to this analysis. The academic economics literature conveniently justifies the current institutional arrangement of central banking through the perspective of the conservative central banker.
 
+%The arrangement of how Fed officials communicate their decisions- and how politicians just kind of are good with it. Maybe bernanke as well.
 
 %%%Apolitical MP- MP doesn't matter any more
 
@@ -166,16 +167,17 @@ Other work has already established the role of finance in the Federal Reserve, f
 
 %%%Central bankers are biased: CBI is rational fiction
 
-\subsection{Regulatory Capture}
-
-Conceptualizations of regulatory capture are often rooted in the seminal work by \cite{stigler_theory_1971}. Dal bo, kwak. 
-
-
-\textcite{wansleben_rise_2023} describes this legitimacy as an attempt to establish bureaucratic power. They also handle how price stability alone may not be solely a mechanism that's pro finance. The Fed has engineered expansionary policies to benefit finance as well.
+%\subsection{Regulatory Capture}
+{
+%Conceptualizations of regulatory capture are often rooted in the seminal work by \cite{stigler_theory_1971}. Dal bo, kwak. 
 
 
-Consider how financial institutions have performed since in the modern era of central bank independence. The Federal Reserve has a unique relationship with finance because financial firms, not the Fed, are responsible for lending to the real economy. In other words, monetary policy is executed through financial firms. In the last 40 years, the growth in finance has dr
 
+%\textcite{wansleben_rise_2023} describes this legitimacy as an attempt to establish bureaucratic power. They also handle how price stability alone may not be solely a mechanism that's pro finance. The Fed has engineered expansionary policies to benefit finance as well.
+
+
+%Consider how financial institutions have performed since in the modern era of central bank independence. The Federal Reserve has a unique relationship with finance because financial firms, not the Fed, are responsible for lending to the real economy. In other words, monetary policy is executed through financial firms. In the last 40 years, the growth in finance has dr
+}
 %%%The rational fictions to the de facto literature; 
 
 \section{Methodology}
@@ -434,17 +436,55 @@ Papers only matter if people in positions of power implement their ideas. Thus, 
 
 
 
-Federal Reserve governors make speeches to communicate important ideas about monetary policy and the institution. Thus, looking at the way they communicate about economic research, and what they choose to emphasize, is informative in understanding how the epistemological prior in the academic literature influences policymakers. To do this, 
+Federal Reserve governors make speeches to communicate important ideas about monetary policy and the institution. Thus, looking at the way they communicate about economic research, and what they choose to emphasize, is informative in understanding how the epistemological prior in the academic literature influences policymakers. To do this, I pull all speeches from Federal Reserve officials between 1996-2025.\footnote{Data is sourced from Kaggle and Huggingface. CHECK THE CITATIONS ON THIS.} Table \ref{tab:fed_cbi_citations} documents how many speeches a given source was referenced by a Fed official. Additionally, my sample contains 435 independent references to the `dual mandate." I sifted through these speeches, with the assistance of AI analysis and independent reading, to uncover speeches that discuss legislative revision to the dual mandate. In the rest of the section, I detail the ways these ideas were utilized by selecting a subsample of speeches to highlight, pulling from a range of Fed officials. I aim to demonstrate how the ideas in these papers has persisted in Fed discourse over time.
+
+\begin{singlespace}
+\begin{table}[H]
+\centering
+\caption{Speeches by Federal Reserve Officials that Reference Key Papers, 1996-2025}
+\label{tab:fed_cbi_citations}
+\small
+\begin{tabular}{l ccccc}
+\toprule
+ & Kydland \& &  &  & & Alesina \&  \\
+ & Prescott & Rogoff & Cukierman & Grilli et al. & Summers \\
+Policymaker & (1977) & (1985) &  & (1991) & (1993) \\
+\midrule
+\textbf{Alan Greenspan}    & 0 & 0 & 1 & 0 & 1 \\
+\textbf{Ben S.\ Bernanke}  & 2 & 2 & 3 & 1 & 3 \\
+\textbf{Jerome H.\ Powell} & 1 & 1 & 1 & 0 & 4 \\
+\midrule
+Laurence H.\ Meyer      & 1 & 0 & 1 & 1 & 0 \\
+Roger W.\ Ferguson      & 0 & 0 & 1 & 0 & 1 \\
+Frederic S.\ Mishkin    & 1 & 0 & 1 & 0 & 1 \\
+Donald L.\ Kohn         & 0 & 0 & 1 & 0 & 0 \\
+Elizabeth A.\ Duke      & 0 & 0 & 2 & 2 & 2 \\
+Charles L.\ Evans       & 0 & 2 & 0 & 0 & 0 \\
+Charles I.\ Plosser     & 6 & 0 & 0 & 0 & 0 \\
+Jeremy C.\ Stein        & 0 & 1 & 0 & 0 & 0 \\
+Stanley Fischer         & 2 & 1 & 1 & 0 & 0 \\
+Christopher J.\ Waller  & 2 & 0 & 0 & 0 & 0 \\
+Adriana D.\ Kugler      & 1 & 1 & 1 & 0 & 1 \\
+\midrule
+Total & 16 & 8 & 13 & 4 & 13 \\
+\bottomrule
+\end{tabular}
+\smallskip
+\begin{minipage}{\linewidth}
+\footnotesize\textit{Notes: Each cell shows the number of times a given Federal Reserve official cited a given piece of literature. Due to the nature of Alex Cukierman's work building on one another, I bundle together all references to the Cukierman perspective on CBI into the fourth column. The first three officals are highlighted because they served as Federal Reserve Chair, though some of their speeches as governor (before they were promoted to chair). Sample taken from 1996-2025. Speech metadata is sourced from Kaggle and Huggingface.}
+\end{minipage}
+\end{table}
+\end{singlespace}
+
+The theory behind the conservative central banker has influenced the way policymakers communicate about monetary policy. Among all the speeches that reference \textcite{rogoff_optimal_1985}, none strongly criticize the conservative central banker model. There are general acknowledgements of the limitations of the model, but the tone communicated generally endorses the core findings. Consider \textcite{bernanke_frb_2004}. First, the premise of this speech is to endorse the decisions made by Paul Volcker in the late 1970s. W
+
+Governor Laurence Meyer is one of the first policymakers to explicitly reference de jure independence index. First, in \textcite{meyer_politics_2000}, he describes how, under the methodology of \textcite{grilli_political_1991} and \textcite{cukierman_measuring_1992}, when ``price stability is the exclusive objective of monetary policy," a central bank scores better, so the Fed is penalized for having a dual mandate. He explicitly prefers \textcite{bade_central_1988}'s measure because of this flaw. He also defends the dual mandate, and acknowledges a public debate that occurred in Congress about revising the dual mandate- prioritizing price stability or employment. However, it is worth noting that \textcite{meyer_monetary_1996} interprets the Fed's dual mandate as primarily a price stability mandate, at least in the long-run under the doctrine of monetary neutrality. Thus, there is a tension between the two speeches; economic theory would defend the indices, by construction, because monetary policy only matters for inflation in the long-run. Yet, as a policymaker, he defends, to some degree, including the employment objective.\footnote{Note there is no conversation of long-term interest rates.} 
+
+Future speeches by Federal Reserve officials appear to have resolved this tension by preferring independence measures that include the price stability objective. 
 
 
+%Discuss l
 
-
-%Laurence H. Meyer, September 8, 1996: "Price stability is therefore the singular and unique long-run objective for monetary policy."
-
-%Meyer again, October 24, 2000, cited Rogoff: He states that Grilli-Masciandro-Tabellini and Cukierman "ranked independence higher if there is a price stability objective and, in Cukierman's case, higher still if price stability is the only or at least principal objective," and that under this scheme "a central bank with more discretion — for example, as a result of multiple objectives, as in the case of the United States — is ranked as less independent than a central bank that has little discretion on account of a single, precisely defined price stability objective." He then adds the tell: "defining independence to involve a mandate making price stability the single or principal objective increases the potential for an inverse relationship between 'independence' and inflation."
-%He also explicitly states the Fed "lost points in these rankings because of ... the failure to single out price stability as the unique or principal objective" — directly parallel to your Romelli 0.25-vs-1.0 objectives finding, and predates it by two decades. Strengthens your claim that this isn't a coding quirk specific to Romelli; it's a stable, long-recognized feature of the entire index tradition.
-
-%William McDonough, October 2, 1996: Describing how high inflation leads to overinvestment in the financial sector
 
 %Bernanke, Oct. 8, 2004- goes through kydland and rogoff. Return to this
 
