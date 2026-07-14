@@ -19,12 +19,33 @@
 \usepackage[
 backend=biber,
 style=apa,
-url = false,
-doi = false,
-isbn=false,
+url = true,
+doi = true,
+isbn=false
 ]{biblatex}
 \addbibresource{bibliography.bib} %Imports bibliography file
+
+
+%Adds in the publisher for web pages- in Zotero, this is the "Publisher" component, but it gets mapped to organization when producing the works cited page
+\DeclareSourcemap{
+  \maps[datatype=bibtex]{
+    \map{
+      \pertype{online}
+      \step[fieldsource=publisher, fieldset=organization, origfieldval]
+    }
+  }
+}
+
+\AtEveryBibitem{%
+%Removes the retrieval date
+\clearfield{urlday}\clearfield{urlmonth}\clearfield{urlyear}%
+
+}
+
+%Clickable links
 \usepackage[hidelinks]{hyperref}
+%Make URLS look better on the references page.
+\usepackage{xurl}
 
 % Headers - candidate number (LSE requirement)
 \usepackage{fancyhdr}
@@ -62,7 +83,7 @@ isbn=false,
     Department of Government\\
     London School of Economics}\\
     \vspace{2cm}
-    {\Large\textbf{Captured by Design: Central Bank Independence as Structural Regulatory Capture}}\\
+    {\Large\textbf{Normative Loading}}\\
     \vspace{2cm}
     Candidate Number: XXXXX\\
     \vspace{0.5cm}
@@ -138,7 +159,7 @@ The theoretical foundation for central bank independence in the economics litera
 Central bank independence has become the dominant form of monetary policymaking around the world. This process occurred over a period of decades following the end of World War II, but much modern analysis of CBI begins with the late 1970s/early 1980s Federal Reserve. During the stagflation episode of the late 1970s, where oil supply shocks meant high inflation occurred during a period of heightened employment, Paul Volcker assumed became Fed Chair in 1979. He chose explicitly to prioritize combatting inflation over unemployment, despite pressure from President Reagan to lower interest rates. During his tenure, the Fed raised interest rates significantly, putting the economy in a recession while simultaneously bringing down inflation. This episode is frequently referenced in the economics literature for two reasons. First, it serves as a simple empirical example of the time inconsistency problem, where a misguided politician wanted interest rates lower than what was optimal. Second, the Federal Reserve technocrats used their special expertise to successfully combat an inflation episode. Even though there was short-term pain in the economy, the US reaped the long-term benefits, providing legitimacy to the technocrats of central banks holding unique, strong monetary policy powers. Under these assumptions, CBI became the institutionally accepted arrangement for central banking around the world. ``Central bank independence has achieved an almost taken for granted quality in contemporary political life, with little questioning of its logic or effectiveness" \parencite[47]{mcnamara_rational_2002}.
 
 
-\subsection{Alternative Literature on CBI}
+\subsection{Political Literature on Central Banking}
 
 \label{sec:political_sci_lit}
 
@@ -155,8 +176,15 @@ Other work has already established the role of finance in the Federal Reserve, f
 
 %The arrangement of how Fed officials communicate their decisions- and how politicians just kind of are good with it. Maybe bernanke as well.
 
-%%%Apolitical MP- MP doesn't matter any more
+%%%Apolitical MP- MP doesn't matter any more to politics
 
+%Lindblom should probably go here, at the end.
+
+%The simplistic models in the historical literature no longer apply- because of all the unique policies that exist in MP today.
+
+%The loneliness of a central bank, and how MP now is the core macroeconomic stabilization policy. That's why a lot of this matters- because fiscal policy just doesn't achieve much.
+
+%Weaponized incompetence and Congress, with the Bernanke example.
 
 
 %The default of what is apolitical- there is some political decision that was then deemed apolitical.
@@ -209,6 +237,8 @@ I emphasize two forms of heterogeneity in the impact of inflation. First, how in
 
 Setting aside this heterogeneity, there is a real, measurable cost to inflation for creditors (particularly banks) relative to debtors. A core feature of bank intermediation is maturity transformation, where banks take cash (deposits) and other short-term investments and make long-term loans (mortgages, corporate loans, etc...). These loans generally have a fixed interest rate. If inflation spikes, the real value of these loans falls; each dollar a debt repays the creditor becomes worth less than when it was borrowed. Here, an aggregate measure of inflation becomes more appropriate to use. Banks distribute money into the entire economy, so the average value of a given dollar influences the ability for banks to continue lending, based on the recouped gains from previous loans. Given that there are varying costs to inflation for different interest and demographic groups, ``inflation has significant redistributive effects" \textcite[256]{posen_declarations_1995}.
 
+It is worth noting that this story is complicated as monetary policy has obtained increased complexity. \textcite{wansleben_rise_2023} establishes how part of the Federal Reserve's growth over the last 40 years has revolved around policy innovations that make expansionary monetary policy non-harmful (or even beneficial to banks). I do not fully address this complexity in this paper, due to time. However, the simplistic models that underpin the conservative central banker also do not address these complexities. In a world of simple monetary policy, with a simple toolkit and a simple lever, there is strong evidence that financial institutions particularly benefit from tighter monetary policy that combats unexpected inflation.
+
 
 Given this, it is clear that how we measure inflation, and why we care about inflation, varies significantly. Yet the theoretical literature on monetary policy begins modeling under the core premise that there is some social objective function that reflects the aggregate preferences of society. In particular, \textcite[480]{kydland_rules_1977} describe a ``socially preferred inflation rate is zero, which seems consistent with the public's preferences," and ``a more informed public might prefer some  positive or negative inflation." \textcite[103]{barro_rules_1983} acknowledge ``distortions from income taxation, unemployment compensation, and the like," yet ignores these distortions in the interior model. While, they think ``of the monetary authority’s objective as reflecting the preferences of the “representative’ private agent," they ``express this objective as a function of actual and expected rates of inflation" \parencite[102]{barro_rules_1983}. \textcite{rogoff_optimal_1985} extends the modeling implications that are predicated off having one uniform, socially optimal inflation rate. The premise of the conservative central banker is a central banker who is more inflation-averse than the public. Yet, Rogoff leaves an underlying question unanswered: How might a central banker obtain this anti-inflation bias? What influences might lead to such an outcome?
 
@@ -257,7 +287,7 @@ This changes with \textcite[366]{grilli_political_1991}, where ``political indep
 %This is rough. Clean it up
 At approximately the same time, \textcite{cukierman_measuring_1992} produced an expanded index on de jure CBI. They included more countries and more components than previous works, and as a consequence, this work has been repeatedly extended. For instance, \textcite{cukierman_central_2002} applied the original 1992 framework to an expanded sample of central banks, including those created following the breakup of the Soviet Union. More modern economics literature has built upon and modfied the indices produced by \textcite{cukierman_measuring_1992}, including, but not limited to, \textcite{romelli_political_2022}, \textcite{romelli_trends_2024}, \textcite{dincer_central_2024}, and \textcite{garriga_revisiting_2025}. While these papers produce their own indices with unique weighting schemes, coding decisions, and larger samples, they all follow the same basic framework. In other words, \textcite{cukierman_measuring_1992}'s methodology is the root of most modern measures of de jure CBI. Crucially, \textcite{cukierman_measuring_1992} no longer distinguished between the political and economic independence components when building its measures of de jure independence. However, they continue to include objectives component of independence as a component of the index. This decision is paramount; empirical analysis of de jure CBI essentially stopped distinguishing between goal and instrument independence in their methodologies therafter. The inclusion of a goal component in the 1992 index is also linked explicitly back to the previously described theoretical literature: ``In \textcite{rogoff_optimal_1985}'s terminology, the objectives variable measures the strength of the 'conservative bias' of the bank's charter" \parencite[357]{cukierman_measuring_1992}. The conservative central banker was officially synonymous with CBI, methodologically speaking.
 
-
+%%%%Do we want crowe and meade 2008? Talks about the gap between de jure and de facto measurement, finding that a central bank with a price stability mandate leads to low inflation. This seems to make empirical and theoretical sense, but it does not really address the underlying point that perhaps that objective should be debated.
 
 %adrian, \textcite{dincer_central_2014},
 
@@ -476,23 +506,26 @@ Total & 16 & 8 & 13 & 4 & 13 \\
 \end{table}
 \end{singlespace}
 
-The theory behind the conservative central banker has influenced the way policymakers communicate about monetary policy. Among all the speeches that reference \textcite{rogoff_optimal_1985}, none strongly criticize the conservative central banker model. There are general acknowledgements of the limitations of the model, but the tone communicated generally endorses the core findings. Consider \textcite{bernanke_frb_2004}. First, the premise of this speech is to endorse the decisions made by Paul Volcker in the late 1970s. W
+First, Federal Reserve officials acknowledge and support the distinction between instrument and goal independence. This  For instance, \textcite{powell_speech_2023} directly cites \textcite{debelle_how_1994} to explicitly to invoke that "the Federal Reserve's monetary policy independence corresponds to operational, or instrument, independence, rather than goal independence." 
+However, the literature that conflates goal and instrument independence is repeatedly utilized in Fed speeches. 
+
+The theory behind the conservative central banker has influenced the way policymakers communicate about monetary policy. Among all the speeches that reference \textcite{rogoff_optimal_1985}, none strongly criticize the conservative central banker model. There are general acknowledgements of the limitations of the model, but the tone communicated generally endorses the core findings. Consider \textcite{bernanke_what_2004}. First, its worth noting that the premise of this speech is to endorse the decisions made by Paul Volcker in the late 1970s. Bernanke invokes \textcite{rogoff_optimal_1985} directly, stating that ``giving the central banker an objective function that differs from the true objectives of society may be useful" with regards to fighting inflation. He then suggests that ``these ideas, supported by a great deal of empirical work, have proven highly influential." 
+
+
+In the same tradition, \textcite{powell_panel_2023} does the same, highlighting the importance of the conservative central banker model presented by \textcite{rogoff_optimal_1985} as well as the empirical evidence developed by \textcite{alesina_central_1993} and \textcite{crowe_central_2008}\footnote{need to address the underlying stuff in this.}. 
+%Roger Ferguson, April 27, 2005: the mandate really contained three goals, but the last one has been widely interpreted as those long-term interest rates consistent with the first two goals, giving the Federal Reserve a "dual mandate" of maximum employment and stable prices.%Charles L Evans, October 17, 2011: "And many of us are conditioned by the work of Ken Rogoff8 and others, who note that in normal times, we may want conservative central bankers as institutional offsets to what would otherwise be inflationary biases in the monetary policy process." Describing the conditioning of central bankers and an anti-inflation bias. 
+
 
 Governor Laurence Meyer is one of the first policymakers to explicitly reference de jure independence index. First, in \textcite{meyer_politics_2000}, he describes how, under the methodology of \textcite{grilli_political_1991} and \textcite{cukierman_measuring_1992}, when ``price stability is the exclusive objective of monetary policy," a central bank scores better, so the Fed is penalized for having a dual mandate. He explicitly prefers \textcite{bade_central_1988}'s measure because of this flaw. He also defends the dual mandate, and acknowledges a public debate that occurred in Congress about revising the dual mandate- prioritizing price stability or employment. However, it is worth noting that \textcite{meyer_monetary_1996} interprets the Fed's dual mandate as primarily a price stability mandate, at least in the long-run under the doctrine of monetary neutrality. Thus, there is a tension between the two speeches; economic theory would defend the indices, by construction, because monetary policy only matters for inflation in the long-run. Yet, as a policymaker, he defends, to some degree, including the employment objective.\footnote{Note there is no conversation of long-term interest rates.} 
 
 Future speeches by Federal Reserve officials appear to have resolved this tension by preferring independence measures that include the price stability objective. 
 
-
-%Discuss l
-
-
-%Bernanke, Oct. 8, 2004- goes through kydland and rogoff. Return to this
-
-
+I am not trying to imply that officials at the Federal Reserve take one stance or the other. I am saying they explicitly endorse papers that conflate goal and instrument independence, and this has significant consequences on the way they think about CBI. 
 %Mishkin, April 3, 2008 (cites cukierman): "when central banks in industrialized countries are ranked according to the degree of legal independence of the central bank, those countries with the highest degree of central bank independence are found to have the best inflation performance"
 %"special interests may try to apply pressure on the central bank to boost employment in the short term through an overly expansionary monetary policy"
 
-%Roger Ferguson, April 27, 2005: the mandate really contained three goals, but the last one has been widely interpreted as those long-term interest rates consistent with the first two goals, giving the Federal Reserve a "dual mandate" of maximum employment and stable prices.
+
+
 
 %Donald Kohn, July 9, 2009- does some analysis on independence. Cites Cukierman 2008: Statistical studies have confirmed that countries with more independent central banks experience lower and more stable rates of inflation with no sacrifice of jobs or income.3 Moreover, low and stable rates of inflation help to deliver strong economic growth and high rates of employment. The benefits of central bank independence appear to be a major explanation for the trend I mentioned earlier of countries moving to establish or to enhance the independence of their central banks. It is surely no coincidence that countries around the world have experienced sustained declines in the level and variability of inflation as they have moved to grant their central banks greater operational independence.
     %Cukierman 2008 says: The primary responsibility of the central bank (CB) is to assure price stability and financial stability. Without prejudice to these objectives the CB should support the economic policies of government. To achieve its main objective the bank is given instrument independence.
@@ -509,9 +542,7 @@ Future speeches by Federal Reserve officials appear to have resolved this tensio
 
 %February 2, 2011, Elizabeth Duke: General random statement and citation of cukierman 
 
-%Charles L Evans, October 17, 2011: "And many of us are conditioned by the work of Ken Rogoff8 and others, who note that in normal times, we may want conservative central bankers as institutional offsets to what would otherwise be inflationary biases in the monetary policy process."
 
-%Powell, January 10, 2013 (from claude): Footnote 4, confirming your goal/instrument framing directly from Powell: "the Federal Reserve's monetary policy independence corresponds to operational, or instrument, independence, rather than goal independence." Citing Debelle and Fischer (1994) — same source you're already using. Footnote 1 lists his own genealogy of the CBI orthodoxy: Rogoff (1985), Alesina and Summers (1993), Crowe and Meade (2008), Bernanke (2010) — useful as a primary-source confirmation that this is the canon a sitting Chair cites as authoritative.
 
 %Fischer, November 04, 2015 (FrDo om Claude): This is your strongest primary-source find so far for two separate reasons:
 %A sitting Fed Vice Chairman explicitly names the dual-mandate-penalty convention (narrow mandate = "more independence") as a modeling convention, then explicitly declines to apply it to the Fed's own case — i.e., he flags the same circularity Meyer flagged in 2000, fifteen years later, from inside the institution.
@@ -520,14 +551,16 @@ Future speeches by Federal Reserve officials appear to have resolved this tensio
 %https://www.federalreserve.gov/newsevents/speech/powell20230110a.htm
 
 
-\subsection{Legislative Blockage}
-
-
-Schnabel sums it up perfectly, when describing the implications of price stability and the dual mandate
-
 
 \section{Conclusion}
 
+The mandates of monetary policy matter. Modern monetary policy is no longer a simple matter of setting interest rates and tweaking money supply. The assumption of the neutrality of monetary policy no longer is satisfactory. Quantitative easing, lending facilities, forward guidance, and the regulatory infrastructure surrounding the Fed all play an important role in the development of the economy. Given this, the normative goals of how we use these complex instruments should be the subject of public debate. Monetary policy is about more than just inflation and employment. Gone are the days when monetary policy is limited, and the Fed's toolkit can achieve a variety of different objectives. It effectively chooses the winners and losers in an economy. The winners of CBI tend to be finance, and the losers tend to be those at the bottom of the income and wealth distribution. 
+
+In an academic context, allowing for free-flowing political, normative debate surrounding the goals of monetary policy is essential, both for the credibility of the Fed and the creation of a better macroeconomic policies. Importantly, stifling this debate under the guise of ``preserving central bank independence" is, in my view, particularly dangerous. There are so many valuable lessons in the historic literature around instrument independence, but the dangers of normative loading and the neglect of political subjects in economics literature is damaging. It means that the interests who are most strongly encoded in the baseline literature have an academic justification for continuing to win. 
+
+\textcite{powell_speech_2023} argues that the Fed ``should "stick to our knitting" and not wander off to pursue perceived social benefits that are not tightly linked to our statutory goals and authorities." Under the historical distinction of instrument and goal independence, that makes institutional sense. Sticking to the explicit goals of monetary policy, as laid out by law, meets the standard of instrument independence. However, if the literature that underpins many of the academic arguments justifying this institutional arrangement conflate the two forms of independence, then it becomes impossible to politically challenge and better the aforementioned statutory goals. That is a political job; it is impossible to accomplish today. 
+
+None of this matters without a functioning democracy. The literature is clear that overpowered executive can damage the credibility of a central bank by encouraging monetary policy that pays off its debts or overstimulates the economy, creating hyperinflation. This piece is not a commentary on whether the United States is a functioning democracy; democracy as a government concepts is something that needs to be preserved and protected, always. The question I ask is, in a democracy, should the public have a say in what an independent central bank seeks to accomplish. To that, I answer, unequivocally yes, and economics literature going forward should not diminish this.
 
 
 \end{doublespace}
