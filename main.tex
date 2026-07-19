@@ -24,7 +24,7 @@ doi = true,
 isbn=false
 ]{biblatex}
 \addbibresource{bibliography.bib} %Imports bibliography file
-
+\addbibresource{legal.bib} %Special bib for Supreme Court cases
 
 %Adds in the publisher for web pages- in Zotero, this is the "Publisher" component, but it gets mapped to organization when producing the works cited page
 \DeclareSourcemap{
@@ -33,13 +33,20 @@ isbn=false
       \pertype{online}
       \step[fieldsource=publisher, fieldset=organization, origfieldval]
     }
-  }
+    }
 }
 
 \AtEveryBibitem{%
 %Removes the retrieval date
 \clearfield{urlday}\clearfield{urlmonth}\clearfield{urlyear}%
 
+}
+
+\AtEveryBibitem{%
+  \ifkeyword{nodate-print}{%
+    \clearfield{labelyear}\clearfield{labelmonth}\clearfield{labelday}%
+    \clearfield{year}\clearfield{date}\clearfield{labeldatesource}%
+  }{}%
 }
 
 %Clickable links
@@ -130,7 +137,26 @@ My abstract goes here
 
 
 \newpage
-\section{Introduction}
+\section{Introduction} 
+
+On June 29, 2026, the Supreme Court of the United States released two different rulings regarding executive power. In \textcite[slip op. at 2, 5]{trump_slaughter_2026}, the Supreme Court dramatically argued that the US President has the power to fire heads of Congressionally-established independent agencies ``at will" and without "cause." On the same day, the Supreme Court release a ruling in Trump v. Cook. Since the start of President Trump's second term, the President has repeatedly attempted to influence the Fed to lower interest rates, using a variety of threats and political pressure. These efforts culminated in President Trump attempting to fire Governor Lisa Cook based on claims of mortgage fraud. At the time of writing this paper, these mortgage fraud claims had not been proven in court, and Governor Cook had not been given the opportunity to respond to these claims in a legal setting.
+
+In Trump v. Cook, the Supreme Court ruled that the President could not remove Governor Cook without proving that she had committed mortgage fraud in a legal setting. While the President can remove policymakers at the Fed with sufficient ``cause," he had not demonstrated such cause regarding Governor Cook. This notably differs from the sweeping executive powers established in Trump v. Slaughter to fire heads of other agencies without cause. Thus, the Supreme Court appeared to carve out a constitutional protection for the Federal Reserve, legally distinguishing it from other agencies. To justify this, the court made references to the history of central banking in the United States. However, it also referenced arguments that are echoed in some economics literature. For instance, the court argues that ``it is the Federal Reserve’s independence that allows it to pursue its mandate of 'maximum employment, stable prices, and moderate long-term interest rates'" \parencite[slip op. at 14]{trump_cook_2026}. This leads to an interesting question: what are the underlying academic arguments that justify this position?
+
+Central bank independence has been extensively written about in academic settings for decades. Some of the most well-cited academic papers in the world, written by economists, describe the merits of the current institutional arrangement of America's central bank. They cite the time-inconsistency problem and core macroeconomic theory to argue that monetary policy can only be effective if it is removed from the political process. Others, predominantly political scientists and public policy academics, question this rhetoric. Some criticize central bank independence as antidemocratic, while others suggest independent central banks create policies that benefit financial institutions and enhance inequality. Through this debate, the two sets of literature rarely directly engage with each other. The economics papers generally ignore criticisms from the political science world, and vice versa. In the economics arena, independence is settled fact; in the political science arena, it is dangerous and problematic.
+
+
+This paper interrogates the literature on central bank independence. I study the academic development of the core arguments of independence, from both theoretical and empirical lenses. Given that the Supreme Court ruling echoed the logic of the academic economics literature, I seek to discover the normative assumptions that underpin the economic analysis of central bank independence. In particular, I investigate the underlying modeling assumptions that are used in both theoretical and empirical analysis on central bank independence. I do not seek to justify the Supreme Court's rulings on executive power. Instead, I seek to understand the logic of what Federal Reserve independence is and why it is important, as this logic may help justify why the Federal Reserve as ``different" relative to other executive agencies. To do this, I conduct a methodological analysis of some of the most famous economics papers on independence to discover where these papers made political assumptions that influenced their ultimate findings.
+
+%Add a quick definition up here of instrument and goal independence?
+Through my analysis, I discover a circular, epistemic loop that is prevelant in the economics literature. The economics literature has established the importance of distinguishing between goal and instrument independence. While instrument independence is formally endorsed by economics literature and Federal Reserve policymakers, the underlying models and empirical analysis that justify such positions often assume that the goals of monetary policy match those of the ``conservative central bank" who is more inflation-averse than the general public. The theoretical literature builds this model based on political assumptions about the harms of inflation, while the empirical literature encodes price stability mandates into the definition of independence. 
+
+Section 2 provides a baseline understanding of the economics and political science literature (and their differing conclusions on central bank independence). Section 3 handles methodology. Section 4 provides the economics literature analysis. The theoretical economics literature that developed the conservative central banker model is analyzed if 4.1.1, while 4.1.2 describes empirical analysis and measures of independence, focusing on ``de jure," or legal independence. 4.2 studies how the literature is utilized in the policymaking setting through Federal Reserve officials speeches. Section 5 provides conclusions and discussions.
+
+
+
+
+
 
 %Start with the Federal Reserve ruling
 
@@ -165,7 +191,9 @@ Central bank independence has become the dominant form of monetary policymaking 
 
 I now turn to the political science and political literature on CBI. There is a well established body of work questioning these assumptions. I focus on academic pieces whose content differs from the assumptions made in the previously discussed economics literature.  In later sections, I will apply these critiques to the economics literature, emphasizing how they are neglected, and how the economics literature, rather than the political science literature, dominates policymaking.
 
-Literature has critiqued the conservative central banker model for CBI. 
+An initial, prerequisite point that is worth visiting is that an independent central bank can only exist and, therefore influence economic outcomes in a functioning democracy. 
+
+Literature has critiqued the conservative central banker model for CBI.  
 
 Some literature has questioned the narrative that the proliferation of CBI is tied to economic performance and the time inconsistency problem. \textcite{powell_panel_2023} links the expansion of CBI to poor economic performance (CHECK THIS).  In particular, it is unclear what makes monetary policy unique among economic policies. One could imagine a situation where politicians could pass irresponsible economic policy, like large tax cuts or direct payments to citizens, immediately before elections. Part of the justification that monetary policy is unique ties it to the theory of neutrality of monetary policy in the long-run. In theory, monetary policy \textit{only} has an impact on inflation, not the real economy, if sufficient time has passed. While other economic policies have real consequences far into the future, this should not. 
 
@@ -503,6 +531,10 @@ The underlying theme regarding the economic theory is that policymakers use thes
 
 
 \section{Conclusion}
+
+
+
+
 %%%%DO NOT LIKE EXECUTIVE POWER
 The mandates of monetary policy matter. Modern monetary policy is no longer a simple matter of setting interest rates and tweaking money supply. The assumption of the neutrality of monetary policy no longer is satisfactory. Quantitative easing, lending facilities, forward guidance, and the regulatory infrastructure surrounding the Fed all play an important role in the development of the economy. Given this, the normative goals of how we use these complex instruments should be the subject of public debate. Monetary policy is about more than just inflation and employment. Gone are the days when monetary policy is limited, and the Fed's toolkit can achieve a variety of different objectives. It effectively chooses the winners and losers in an economy. The winners of CBI tend to be finance, and the losers tend to be those at the bottom of the income and wealth distribution. 
 
